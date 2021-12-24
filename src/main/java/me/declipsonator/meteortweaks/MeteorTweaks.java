@@ -1,11 +1,9 @@
 package me.declipsonator.meteortweaks;
 
 import me.declipsonator.meteortweaks.modules.Scaffold;
-import me.declipsonator.meteortweaks.modules.hud.HudExample;
 import meteordevelopment.meteorclient.MeteorClient;
 import meteordevelopment.meteorclient.addons.MeteorAddon;
 import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.systems.modules.render.hud.HUD;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
