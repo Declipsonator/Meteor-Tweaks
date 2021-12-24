@@ -6,7 +6,7 @@
 
 
 ## Install:  
-- Go to the releases: (https://github.com/Declipsonator/Meteor-Tweaks/releases/latest)
+- Go to the releases: https://github.com/Declipsonator/Meteor-Tweaks/releases/latest
 - Download the jar file
 - Place it in your mod folder with Meteor
 
