@@ -16,7 +16,7 @@ public class MeteorTweaks extends MeteorAddon {
 
 	@Override
 	public void onInitialize() {
-		LOG.info("Initializing Meteor Addon Template");
+		LOG.info("Initializing Meteor Tweaks Addon");
 
 		// Required when using @EventHandler
 		MeteorClient.EVENT_BUS.registerLambdaFactory("me.declipsonator.meteortweaks", (lookupInMethod, klass) -> (MethodHandles.Lookup) lookupInMethod.invoke(null, klass, MethodHandles.lookup()));
