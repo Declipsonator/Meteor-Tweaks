@@ -1,8 +1,8 @@
 <div align="center">
   <h1>Meteor Tweaks</h1>
+    <p>Meteor Tweaks is an addon to the Meteor Client utility mod.</p>
   <img src="src/main/resources/assets/meteortweaks/icon.png" alt="Meteor Tweaks Logo" width="20%"/>
-  
-Meteor Tweaks is an addon to the Meteor Client utility mod
+</div>  
 
 
 ### Install:  
