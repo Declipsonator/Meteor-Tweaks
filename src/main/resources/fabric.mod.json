@@ -8,7 +8,8 @@
     "Declipsonator"
   ],
   "contact": {
-    "repo": "https://github.com/MeteorDevelopment/meteor-addon-template"
+    "repo": "https://github.com/Declipsonator/Meteor-Tweaks"
+    "discord": "Declip#3631"
   },
   "icon": "assets/meteortweaks/icon.png",
   "environment": "client",
