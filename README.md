@@ -1,5 +1,5 @@
 <p align="center">
-# Meteor Tweaks
+  <h1>Meteor Tweaks</h1>
 <p align="center">
  <img src="src/main/resources/assets/meteortweaks/icon.png" alt="Meteor Tweaks Logo" width="20%"/>
   
