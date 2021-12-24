@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "addon-template",
+  "id": "meteor-tweaks",
   "version": "${version}",
   "name": "Meteor Tweaks",
   "description": "A Meteor Client Addon that adds tweaks to modules and settings.",
