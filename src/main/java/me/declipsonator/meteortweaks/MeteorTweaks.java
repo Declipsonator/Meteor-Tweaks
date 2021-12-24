@@ -24,10 +24,6 @@ public class MeteorTweaks extends MeteorAddon {
 		// Modules
 		Modules.get().add(new Scaffold());
 
-		// HUD
-		HUD hud = Modules.get().get(HUD.class);
-		hud.elements.add(new HudExample(hud));
-
 
 	}
 
