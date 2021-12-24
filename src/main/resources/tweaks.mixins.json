@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "meteordevelopment.addons.template.mixins",
+  "package": "me.declipsonator.meteortweaks.mixins",
   "compatibilityLevel": "JAVA_16",
   "client": [
 
