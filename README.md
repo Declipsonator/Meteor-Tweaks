@@ -8,7 +8,7 @@
 ### Install:  
 - Go to the releases: (https://github.com/Declipsonator/Meteor-Tweaks/releases/latest)
 - Download the jar file
-- Place it in your mod folder with meteor
+- Place it in your mod folder with Meteor
 
 ## Features:
 - Vertical Range, Horizontal Range, and On Surface Settings in Scaffold
