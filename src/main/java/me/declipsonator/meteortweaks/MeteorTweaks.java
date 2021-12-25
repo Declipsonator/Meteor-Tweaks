@@ -1,12 +1,13 @@
 package me.declipsonator.meteortweaks;
 
+import me.declipsonator.meteortweaks.modules.AntiGhostBlocks;
 import me.declipsonator.meteortweaks.modules.Scaffold;
 import meteordevelopment.meteorclient.MeteorClient;
 import meteordevelopment.meteorclient.addons.MeteorAddon;
 import meteordevelopment.meteorclient.systems.modules.Modules;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import java.lang.invoke.MethodHandles;
 
 public class MeteorTweaks extends MeteorAddon {
@@ -21,6 +22,7 @@ public class MeteorTweaks extends MeteorAddon {
 
 		// Modules
 		Modules.get().add(new Scaffold());
+		Modules.get().add(new AntiGhostBlocks());
 
 
 	}
