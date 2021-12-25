@@ -12,3 +12,4 @@
 
 ## Features:
 - Vertical Range, Horizontal Range, and On Surface Settings in Scaffold
+- Addition of the AntiGhostBlocks module; Press a key and remove the Ghost Blocks in your reach
