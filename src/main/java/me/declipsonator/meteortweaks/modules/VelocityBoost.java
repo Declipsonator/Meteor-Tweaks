@@ -21,7 +21,7 @@ import net.minecraft.util.math.Vec3d;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Boost2h2e extends Module {
+public class VelocityBoost extends Module {
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
 
 
@@ -57,7 +57,7 @@ public class Boost2h2e extends Module {
 
     public static final List<FireworkRocketEntity> fireworks = new ArrayList<>();
 
-    public Boost2h2e() {
+    public VelocityBoost() {
         super(Categories.Movement, "velocity-boost", "Boosts you when elytra flying with velocity.");
     }
 
