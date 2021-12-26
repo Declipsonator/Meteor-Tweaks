@@ -58,7 +58,7 @@ public class Boost2h2e extends Module {
     public static final List<FireworkRocketEntity> fireworks = new ArrayList<>();
 
     public Boost2h2e() {
-        super(Categories.Movement, "elytra-boost+", "Boosts you when flying with velocity.");
+        super(Categories.Movement, "velocity-boost", "Boosts you when elytra flying with velocity.");
     }
 
     @EventHandler
