@@ -1,7 +1,7 @@
 package me.declipsonator.meteortweaks;
 
 import me.declipsonator.meteortweaks.modules.AntiGhostBlocks;
-import me.declipsonator.meteortweaks.modules.Boost2h2e;
+import me.declipsonator.meteortweaks.modules.VelocityBoost;
 import me.declipsonator.meteortweaks.modules.Scaffold;
 import meteordevelopment.meteorclient.MeteorClient;
 import meteordevelopment.meteorclient.addons.MeteorAddon;
