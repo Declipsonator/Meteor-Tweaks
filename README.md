@@ -13,3 +13,4 @@
 ## Features:
 - Vertical Range, Horizontal Range, and On Surface Settings in Scaffold
 - Addition of the AntiGhostBlocks module; Press a key and remove the Ghost Blocks in your reach
+- Addition of the VelocityBoost module; Press a key and boost your elytra with velocity
