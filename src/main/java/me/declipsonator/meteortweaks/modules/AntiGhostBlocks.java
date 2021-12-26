@@ -42,7 +42,7 @@ public class AntiGhostBlocks extends Module {
     }
 
     private void removeGhostBlocks() {
-        if (mc.getNetworkHandler() == null) return;
+        if (mc.getNetworkHandler() == null || mc.currentScreen == null) return;
 
 
         assert mc.player != null;
