@@ -24,7 +24,7 @@ public class MeteorTweaks extends MeteorAddon {
 		// Modules
 		Modules.get().add(new Scaffold());
 		Modules.get().add(new AntiGhostBlocks());
-		Modules.get().add(new Boost2h2e());
+		Modules.get().add(new VelocityBoost());
 
 
 	}
