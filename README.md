@@ -11,7 +11,7 @@
 - Place it in your mod folder with Meteor
 
 ## Info
-- Support Server: dsc.gg/meteor-tweaks
+- Support Server: https://dsc.gg/meteor-tweaks
 - Report a Bug or Suggest Something: https://github.com/Declipsonator/Meteor-Tweaks/issues
 
 ## Features:
