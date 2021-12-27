@@ -10,6 +10,10 @@
 - Download the jar file
 - Place it in your mod folder with Meteor
 
+## Info
+Support Server: dsc.gg/meteor-tweaks
+Report a Bug or Suggest Something: https://github.com/Declipsonator/Meteor-Tweaks/issues
+
 ## Features:
 - Vertical Range, Horizontal Range, and On Surface Settings in Scaffold
 - Addition of the AntiGhostBlocks module; Press a key and remove the Ghost Blocks in your reach
