@@ -1,6 +1,7 @@
 package me.declipsonator.meteortweaks;
 
 import me.declipsonator.meteortweaks.modules.AntiGhostBlocks;
+import me.declipsonator.meteortweaks.modules.GUIMove;
 import me.declipsonator.meteortweaks.modules.VelocityBoost;
 import me.declipsonator.meteortweaks.modules.Scaffold;
 import meteordevelopment.meteorclient.MeteorClient;
@@ -25,6 +26,8 @@ public class MeteorTweaks extends MeteorAddon {
 		Modules.get().add(new Scaffold());
 		Modules.get().add(new AntiGhostBlocks());
 		Modules.get().add(new VelocityBoost());
+		Modules.get().add(new GUIMove());
+
 
 
 	}
