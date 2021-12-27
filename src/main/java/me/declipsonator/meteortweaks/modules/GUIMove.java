@@ -146,7 +146,7 @@ public class GUIMove extends Module {
 
     @EventHandler(priority = EventPriority.HIGHEST)
     private void onReceivePacket(PacketEvent.Receive event) {
-        if (event.packet.getClass().equals(CloseScreenS2CPacket.class) && antiClose.get()) event.cancel();
+        if (event.packet instanceof CloseScreenS2CPacket && antiClose.get()) event.cancel();
     }
 
     private boolean skip() {
