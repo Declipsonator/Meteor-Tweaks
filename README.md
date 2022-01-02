@@ -16,5 +16,6 @@
 ## Features:
 - Vertical Range, Horizontal Range, and On Surface Settings in Scaffold
 - Anti Close Setting in Gui Move
+- Inventory Setting in AutoTool, works with the Switch Back setting
 - Addition of the AntiGhostBlocks module; Press a key and remove the Ghost Blocks in your reach
 - Addition of the VelocityBoost module; Press a key and boost your elytra with velocity or get a continous velocity the direction you're looking
