@@ -1,12 +1,15 @@
 package me.declipsonator.meteortweaks;
 
-import me.declipsonator.meteortweaks.modules.AntiGhostBlocks;
-import me.declipsonator.meteortweaks.modules.GUIMove;
-import me.declipsonator.meteortweaks.modules.VelocityBoost;
-import me.declipsonator.meteortweaks.modules.Scaffold;
+import me.declipsonator.meteortweaks.modules.*;
 import meteordevelopment.meteorclient.MeteorClient;
 import meteordevelopment.meteorclient.addons.MeteorAddon;
+import meteordevelopment.meteorclient.events.packets.PacketEvent;
+import meteordevelopment.meteorclient.settings.BoolSetting;
+import meteordevelopment.meteorclient.settings.Setting;
 import meteordevelopment.meteorclient.systems.modules.Modules;
+import meteordevelopment.orbit.EventHandler;
+import meteordevelopment.orbit.EventPriority;
+import net.minecraft.network.packet.s2c.play.CloseScreenS2CPacket;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -27,6 +30,7 @@ public class MeteorTweaks extends MeteorAddon {
 		Modules.get().add(new AntiGhostBlocks());
 		Modules.get().add(new VelocityBoost());
 		Modules.get().add(new GUIMove());
+		Modules.get().add(new AutoTool());
 
 
 
