@@ -12,6 +12,7 @@
 
 ## Info
 - Report a Bug or Suggest Something: https://github.com/Declipsonator/Meteor-Tweaks/issues
+- Get Help or Just Talk: https://dsc.gg/meteor-tweaks
 
 ## Features:
 - Vertical Range, Horizontal Range, and On Surface Settings in Scaffold
