@@ -3,7 +3,7 @@
   "package": "me.declipsonator.meteortweaks.mixins",
   "compatibilityLevel": "JAVA_16",
   "client": [
-
+    "FreecamMixin"
   ],
   "injectors": {
     "defaultRequire": 1
