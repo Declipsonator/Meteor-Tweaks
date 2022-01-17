@@ -15,6 +15,7 @@
 - Get Help or Just Talk: https://dsc.gg/meteor-tweaks
 
 ## Features:
+- Notification after launching the client if Tweaks is not on the latest release
 - Vertical Range, Horizontal Range, and On Surface Settings in Scaffold
 - Anti Close Setting in Gui Move
 - Inventory Setting in AutoTool, works with the Switch Back setting
