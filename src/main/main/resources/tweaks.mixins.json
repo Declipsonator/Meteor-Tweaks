@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "me.declipsonator.meteortweaks.mixins",
+  "compatibilityLevel": "JAVA_16",
+  "client": [
+    "FreecamMixin",
+    "TitleScreenMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "meteor-tweaks",
+  "version": "${version}",
+  "name": "Meteor Tweaks",
+  "description": "A Meteor Client Addon that adds tweaks to modules and settings.",
+  "authors": [
+    "Declipsonator"
+  ],
+  "contact": {
+    "repo": "https://github.com/Declipsonator/Meteor-Tweaks",
+    "discord": "Declip#3631"
+  },
+  "icon": "assets/meteortweaks/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "meteor": [
+      "me.declipsonator.meteortweaks.MeteorTweaks"
+    ]
+  },
+  "mixins": [
+    "tweaks.mixins.json"
+  ],
+  "custom": {
+    "meteor-client:color": "155,1,1"
+  },
+  "depends": {
+    "java": ">=16",
+    "minecraft": ">=@mc_version@",
+    "meteor-client": "*"
+  }
+}
