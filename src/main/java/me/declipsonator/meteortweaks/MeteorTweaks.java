@@ -4,10 +4,14 @@ import me.declipsonator.meteortweaks.modules.*;
 import meteordevelopment.meteorclient.MeteorClient;
 import meteordevelopment.meteorclient.addons.MeteorAddon;
 import meteordevelopment.meteorclient.systems.modules.Modules;
+import net.fabricmc.loader.api.FabricLoader;
+import net.fabricmc.loader.api.ModContainer;
+import net.fabricmc.loader.api.Version;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.lang.invoke.MethodHandles;
+import java.util.Optional;
 
 public class MeteorTweaks extends MeteorAddon {
 	public static final Logger LOG = LogManager.getLogger();
@@ -26,8 +30,8 @@ public class MeteorTweaks extends MeteorAddon {
 		Modules.get().add(new GUIMove());
 		Modules.get().add(new AutoTool());
 
-
-
 	}
+
+
 
 }
