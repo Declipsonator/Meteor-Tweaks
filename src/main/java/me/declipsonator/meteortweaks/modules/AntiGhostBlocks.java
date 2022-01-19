@@ -32,7 +32,6 @@ public class AntiGhostBlocks extends Module {
             .name("keybind")
             .description("The keybind to erase ghost blocks.")
             .action(this::removeGhostBlocks)
-            .defaultValue(Keybind.fromKey(GLFW.GLFW_KEY_B))
             .build()
     );
 
@@ -45,7 +44,6 @@ public class AntiGhostBlocks extends Module {
         if (mc.getNetworkHandler() == null || mc.currentScreen == null) return;
 
 
-        assert mc.player != null;
         BlockPos blockPos = mc.player.getBlockPos();
         for (int x = -range.get(); x <= range.get(); x++) {
             for (int y = -range.get(); y <= range.get(); y++) {

@@ -30,63 +30,63 @@ public class AutoTool extends Module {
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
 
     private final Setting<Boolean> inventory = sgGeneral.add(new BoolSetting.Builder()
-        .name("inventory")
-        .description("Whether to use tools from you inventory.")
-        .defaultValue(false)
-        .build()
+            .name("inventory")
+            .description("Whether to use tools from you inventory.")
+            .defaultValue(false)
+            .build()
     );
 
     private final Setting<Boolean> hotbarFirst = sgGeneral.add(new BoolSetting.Builder()
-        .name("hotbar-first")
-        .description("Whether or not to prefer using tools from the hotbar over tools from your inventory.")
-        .defaultValue(true)
-        .visible(() -> inventory.get())
-        .build()
+            .name("hotbar-first")
+            .description("Whether or not to prefer using tools from the hotbar over tools from your inventory.")
+            .defaultValue(true)
+            .visible(() -> inventory.get())
+            .build()
     );
 
     private final Setting<EnchantPreference> prefer = sgGeneral.add(new EnumSetting.Builder<EnchantPreference>()
-        .name("prefer")
-        .description("Either to prefer Silk Touch, Fortune, or none.")
-        .defaultValue(EnchantPreference.Fortune)
-        .build()
+            .name("prefer")
+            .description("Either to prefer Silk Touch, Fortune, or none.")
+            .defaultValue(EnchantPreference.Fortune)
+            .build()
     );
 
     private final Setting<Boolean> silkTouchForEnderChest = sgGeneral.add(new BoolSetting.Builder()
-        .name("silk-touch-for-ender-chest")
-        .description("Mines Ender Chests only with the Silk Touch enchantment.")
-        .defaultValue(true)
-        .build()
+            .name("silk-touch-for-ender-chest")
+            .description("Mines Ender Chests only with the Silk Touch enchantment.")
+            .defaultValue(true)
+            .build()
     );
 
     private final Setting<Boolean> antiBreak = sgGeneral.add(new BoolSetting.Builder()
-        .name("anti-break")
-        .description("Stops you from breaking your tool.")
-        .defaultValue(false)
-        .build()
+            .name("anti-break")
+            .description("Stops you from breaking your tool.")
+            .defaultValue(false)
+            .build()
     );
 
     private final Setting<Integer> breakDurability = sgGeneral.add(new IntSetting.Builder()
-        .name("anti-break-percentage")
-        .description("The durability percentage to stop using a tool.")
-        .defaultValue(10)
-        .range(1, 100)
-        .sliderRange(1, 100)
-        .visible(antiBreak::get)
-        .build()
+            .name("anti-break-percentage")
+            .description("The durability percentage to stop using a tool.")
+            .defaultValue(10)
+            .range(1, 100)
+            .sliderRange(1, 100)
+            .visible(antiBreak::get)
+            .build()
     );
 
     private final Setting<Boolean> switchBack = sgGeneral.add(new BoolSetting.Builder()
-        .name("switch-back")
-        .description("Switches your hand to whatever was selected when releasing your attack key.")
-        .defaultValue(false)
-        .build()
+            .name("switch-back")
+            .description("Switches your hand to whatever was selected when releasing your attack key.")
+            .defaultValue(false)
+            .build()
     );
 
     private final Setting<Integer> switchDelay = sgGeneral.add((new IntSetting.Builder()
-        .name("switch-delay")
-        .description("Delay in ticks before switching tools.")
-        .defaultValue(0)
-        .build()
+            .name("switch-delay")
+            .description("Delay in ticks before switching tools.")
+            .defaultValue(0)
+            .build()
     ));
 
     private boolean wasPressed;
@@ -204,8 +204,8 @@ public class AutoTool extends Module {
         if (!good.test(itemStack) || !isTool(itemStack)) return -1;
 
         if (silkTouchEnderChest
-            && state.getBlock() == Blocks.ENDER_CHEST
-            && EnchantmentHelper.getLevel(Enchantments.SILK_TOUCH, itemStack) == 0) {
+                && state.getBlock() == Blocks.ENDER_CHEST
+                && EnchantmentHelper.getLevel(Enchantments.SILK_TOUCH, itemStack) == 0) {
             return -1;
         }
 
