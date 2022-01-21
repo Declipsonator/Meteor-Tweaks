@@ -20,6 +20,7 @@ public class FreecamMixin {
     @Shadow
     private boolean forward, backward, right, left, up, down;
 
+    @EventHandler
     public void onKey(KeyEvent event) {
         if (Input.isKeyPressed(GLFW.GLFW_KEY_F3)) return;
 
