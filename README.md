@@ -14,6 +14,14 @@
 - Report a Bug or Suggest Something: https://github.com/Declipsonator/Meteor-Tweaks/issues
 - Get Help or Just Talk: https://dsc.gg/meteor-tweaks
 
+## Using Code
+If you plan to use code from Meteor Tweaks, please do the following:
+- Credit Meteor Tweaks
+- Credit Declipsonator
+- Credit Meteor Client
+
+This applies even if you do make changes.
+
 ## Features:
 - Notification after launching the client if Tweaks is not on the latest release
 - Vertical Range, Horizontal Range, and On Surface Settings in Scaffold
