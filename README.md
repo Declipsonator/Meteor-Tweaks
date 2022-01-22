@@ -22,3 +22,4 @@
 - Server Join/Leave Messages Setting in Notifier
 - Addition of the AntiGhostBlocks module; Press a key and remove the Ghost Blocks in your reach
 - Addition of the VelocityBoost module; Press a key and boost your elytra with velocity or get a continous velocity the direction you're looking
+- Addition of the TpsSync module;It syncs placing and breaking blocks with the server, preventing ghost blocks
