@@ -26,7 +26,7 @@ public class MeteorTweaks extends MeteorAddon {
 		Modules.get().add(new GUIMove());
 		Modules.get().add(new AutoTool());
 		Modules.get().add(new Notifier());
-
+		Modules.get().add(new TpsSync());
 
 	}
 
