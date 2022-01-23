@@ -1,8 +1,11 @@
 package me.declipsonator.meteortweaks;
 
+import me.declipsonator.meteortweaks.hud.ItemCountHud;
 import me.declipsonator.meteortweaks.modules.*;
 import meteordevelopment.meteorclient.MeteorClient;
 import meteordevelopment.meteorclient.addons.MeteorAddon;
+import meteordevelopment.meteorclient.systems.Systems;
+import meteordevelopment.meteorclient.systems.hud.HUD;
 import meteordevelopment.meteorclient.systems.modules.Modules;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -27,7 +30,11 @@ public class MeteorTweaks extends MeteorAddon {
 		Modules.get().add(new AutoTool());
 		Modules.get().add(new Notifier());
 		Modules.get().add(new TpsSync());
+		Modules.get().add(new StashFinder());
+		Modules.get().add(new RideStats());
 
+		HUD hud = Systems.get(HUD.class);
+		hud.elements.add(new ItemCountHud(hud));
 	}
 
 
