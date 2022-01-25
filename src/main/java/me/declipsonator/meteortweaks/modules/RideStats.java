@@ -28,32 +28,32 @@ import java.util.Objects;
 
 public class RideStats extends Module {
     SettingGroup sgGeneral = settings.getDefaultGroup();
-    SettingGroup sgEntities = settings.createGroup("entities");
+    SettingGroup sgEntities = settings.createGroup("Entities");
 
-    private final Setting<Boolean> horse = sgGeneral.add(new BoolSetting.Builder()
+    private final Setting<Boolean> horse = sgEntities.add(new BoolSetting.Builder()
             .name("horses")
             .description("Display stats above horses.")
             .defaultValue(true)
             .build()
     );
 
-    private final Setting<Boolean> donkey = sgGeneral.add(new BoolSetting.Builder()
-            .name("horses")
-            .description("Display stats above horses.")
+    private final Setting<Boolean> donkey = sgEntities.add(new BoolSetting.Builder()
+            .name("donkeys")
+            .description("Display stats above donkeys.")
             .defaultValue(true)
             .build()
     );
 
-    private final Setting<Boolean> mule = sgGeneral.add(new BoolSetting.Builder()
-            .name("horses")
-            .description("Display stats above horses.")
+    private final Setting<Boolean> mule = sgEntities.add(new BoolSetting.Builder()
+            .name("mules")
+            .description("Display stats above mules.")
             .defaultValue(true)
             .build()
     );
 
-    private final Setting<Boolean> llama = sgGeneral.add(new BoolSetting.Builder()
-            .name("horses")
-            .description("Display stats above horses.")
+    private final Setting<Boolean> llama = sgEntities.add(new BoolSetting.Builder()
+            .name("llamas")
+            .description("Display stats above llamas.")
             .defaultValue(true)
             .build()
     );

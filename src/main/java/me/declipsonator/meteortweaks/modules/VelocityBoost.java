@@ -63,6 +63,14 @@ public class VelocityBoost extends Module {
         .build()
     );
 
+    private final Setting<Boolean> changeY = sgGeneral.add(new BoolSetting.Builder()
+            .name("vertical-increase")
+            .description("Adds to your vertical velocity as well.")
+            .defaultValue(true)
+            .visible(() -> type.get() == Type.Once)
+            .build()
+    );
+
     private final Setting<Keybind> keybind = sgGeneral.add(new KeybindSetting.Builder()
         .name("keybind")
         .description("The keybind to boost.")
@@ -109,8 +117,9 @@ public class VelocityBoost extends Module {
                     mc.player.playSound(SoundEvents.ENTITY_FIREWORK_ROCKET_LAUNCH, 1.0f, 1.0f);
                 }
 
-                Vec3d velocity = getHorizontalVelocity(onceBPS.get(), 0, mc.player.getYaw());
-                mc.player.addVelocity(velocity.getX(), 0, velocity.getZ());
+                Vec3d velocity = getHorizontalVelocity(onceBPS.get(), mc.player.getPitch(), mc.player.getYaw());
+                if(changeY.get()) mc.player.addVelocity(velocity.getX(), velocity.getY(), velocity.getZ());
+                else mc.player.addVelocity(velocity.getX(), 0, velocity.getZ());
             }
         }
     }

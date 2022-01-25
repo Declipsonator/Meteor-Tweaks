@@ -22,6 +22,7 @@ public class MeteorTweaks extends MeteorAddon {
 		// Required when using @EventHandler
 		MeteorClient.EVENT_BUS.registerLambdaFactory("me.declipsonator.meteortweaks", (lookupInMethod, klass) -> (MethodHandles.Lookup) lookupInMethod.invoke(null, klass, MethodHandles.lookup()));
 
+
 		// Modules
 		Modules.get().add(new Scaffold());
 		Modules.get().add(new AntiGhostBlocks());
@@ -32,6 +33,7 @@ public class MeteorTweaks extends MeteorAddon {
 		Modules.get().add(new TpsSync());
 		Modules.get().add(new StashFinder());
 		Modules.get().add(new RideStats());
+		Modules.get().add(new GroupChat());
 
 		HUD hud = Systems.get(HUD.class);
 		hud.elements.add(new ItemCountHud(hud));
