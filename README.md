@@ -36,3 +36,4 @@ This applies even if you do make changes.
 - Addition of the TpsSync module; It syncs placing and breaking blocks with the server, preventing ghost blocks
 - Addition of the RideStats module; See information about rideable mobs above their heads
 - Addition of the ItemCount Hud; Display how much of items you have
+- Addition of the GroupChat Module; Send private messages to multiple players at once
