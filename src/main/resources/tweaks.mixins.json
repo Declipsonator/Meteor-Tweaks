@@ -4,8 +4,7 @@
   "compatibilityLevel": "JAVA_16",
   "client": [
     "FreecamMixin",
-    "TitleScreenMixin",
-    "BlockMixin"
+    "TitleScreenMixin"
   ],
   "injectors": {
     "defaultRequire": 1
