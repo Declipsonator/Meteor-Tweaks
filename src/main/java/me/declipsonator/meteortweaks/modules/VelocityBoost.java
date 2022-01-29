@@ -64,7 +64,7 @@ public class VelocityBoost extends Module {
     );
 
     private final Setting<Boolean> changeY = sgGeneral.add(new BoolSetting.Builder()
-            .name("vertical-increase")
+            .name("vertical-velocity")
             .description("Adds to your vertical velocity as well.")
             .defaultValue(true)
             .visible(() -> type.get() == Type.Once)

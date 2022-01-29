@@ -34,6 +34,7 @@ public class MeteorTweaks extends MeteorAddon {
 		Modules.get().add(new StashFinder());
 		Modules.get().add(new RideStats());
 		Modules.get().add(new GroupChat());
+		Modules.get().add(new AutoSign());
 
 		HUD hud = Systems.get(HUD.class);
 		hud.elements.add(new ItemCountHud(hud));
