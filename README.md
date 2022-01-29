@@ -29,6 +29,7 @@ This applies even if you do make changes.
 - Vertical Range, Horizontal Range, and On Surface Settings in Scaffold
 - Anti Close Setting in Gui Move
 - Inventory Setting in AutoTool, works with the Switch Back setting
+- AutoSign rewrite with more settings
 - Server Join/Leave Messages Setting in Notifier
 - Stashfinder found stashes displays in active module hud
 - Addition of the AntiGhostBlocks module; Press a key and remove the Ghost Blocks in your reach
