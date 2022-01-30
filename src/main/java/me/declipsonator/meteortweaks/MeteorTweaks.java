@@ -1,10 +1,12 @@
 package me.declipsonator.meteortweaks;
 
+import me.declipsonator.meteortweaks.commands.SoftLeave;
 import me.declipsonator.meteortweaks.hud.ItemCountHud;
 import me.declipsonator.meteortweaks.modules.*;
 import meteordevelopment.meteorclient.MeteorClient;
 import meteordevelopment.meteorclient.addons.MeteorAddon;
 import meteordevelopment.meteorclient.systems.Systems;
+import meteordevelopment.meteorclient.systems.commands.Commands;
 import meteordevelopment.meteorclient.systems.hud.HUD;
 import meteordevelopment.meteorclient.systems.modules.Modules;
 import org.apache.logging.log4j.LogManager;
@@ -35,6 +37,11 @@ public class MeteorTweaks extends MeteorAddon {
 		Modules.get().add(new RideStats());
 		Modules.get().add(new GroupChat());
 		Modules.get().add(new AutoSign());
+		Modules.get().add(new DeathExplore());
+		Modules.get().add(new EntitySpeed());
+
+		// Commands
+		Commands.get().add(new SoftLeave());
 
 		HUD hud = Systems.get(HUD.class);
 		hud.elements.add(new ItemCountHud(hud));

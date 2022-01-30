@@ -4,7 +4,9 @@
   "compatibilityLevel": "JAVA_16",
   "client": [
     "FreecamMixin",
-    "TitleScreenMixin"
+    "TitleScreenMixin",
+    "EntityMixin",
+    "BoatEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1
