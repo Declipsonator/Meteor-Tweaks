@@ -32,7 +32,7 @@ This applies even if you do make changes.
 - AutoSign rewrite with more settings
 - Server Join/Leave Messages Setting in Notifier
 - Stashfinder found stashes displays in active module hud
-- Made EntitySpeed work with boars
+- Made EntitySpeed work with boats
 - Addition of the AntiGhostBlocks module; Press a key and remove the Ghost Blocks in your reach
 - Addition of the VelocityBoost module; Press a key and boost your elytra with velocity or get a continuous velocity the direction you're looking
 - Addition of the TpsSync module; It syncs placing and breaking blocks with the server, preventing ghost blocks
