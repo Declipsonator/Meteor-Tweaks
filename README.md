@@ -32,6 +32,7 @@ This applies even if you do make changes.
 - AutoSign rewrite with more settings
 - Server Join/Leave Messages Setting in Notifier
 - Stashfinder found stashes displays in active module hud
+- Added a Whitelist/Blacklist setting in PotionTimersHud
 - Made EntitySpeed work with boats
 - Addition of the AntiGhostBlocks module; Press a key and remove the Ghost Blocks in your reach
 - Addition of the VelocityBoost module; Press a key and boost your elytra with velocity or get a continuous velocity the direction you're looking
