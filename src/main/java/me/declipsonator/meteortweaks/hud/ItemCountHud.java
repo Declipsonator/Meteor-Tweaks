@@ -78,14 +78,18 @@ public class ItemCountHud extends HudElement {
 
     private void renderItem(HudRenderer renderer, Item item, double x, double y) {
         renderer.text(item.getName().getString() + ":", x, y, hud.primaryColor.get());
-
-        String count = String.valueOf(InvUtils.find(item).count());
+        String count;
+        if(mc.player == null) count = String.valueOf(0);
+        else count = String.valueOf(InvUtils.find(item).count());
         renderer.text(count, x + renderer.textWidth(item.getName().getString()) + renderer.textWidth(": "), y, itemColor.get());
     }
 
     private double getItemWidth(HudRenderer renderer, Item item) {
         double width = renderer.textWidth(item.getName().getString() + ": ");
-        return width + renderer.textWidth(String.valueOf(InvUtils.find(item).count()));
+        double count;
+        if(mc.player == null) count = renderer.textWidth(String.valueOf(0));
+        else count = renderer.textWidth(String.valueOf(InvUtils.find(item).count()));
+        return width + count;
     }
 
 }

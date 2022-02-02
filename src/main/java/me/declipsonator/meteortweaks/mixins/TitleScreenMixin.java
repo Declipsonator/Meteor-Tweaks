@@ -32,12 +32,12 @@ public class TitleScreenMixin {
                     if (TweaksUtil.version().compareTo(Version.parse(githubReleaseJson.getTagName().replace("v", ""))) < 0) {
 
                         OkPrompt.create()
+                                .id("meteortweaks-update")
                                 .title("Outdated")
                                 .message("A new version of Meteor Tweaks has been released.")
                                 .message("Current version: " + TweaksUtil.version().getFriendlyString())
                                 .message("Latest version: " + Version.parse(githubReleaseJson.getTagName().replace("v", "")).getFriendlyString())
                                 .message("Update by going to https://github.com/Declipsonator/Meteor-Tweaks")
-                                .id("meteortweaks-update")
                                 .show();
 
 

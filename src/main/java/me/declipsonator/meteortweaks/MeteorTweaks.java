@@ -47,6 +47,10 @@ public class MeteorTweaks extends MeteorAddon {
 		hud.elements.add(new ItemCountHud(hud));
 	}
 
-
+	//For PotionTimerMixin
+	public enum whiteBlackNoRacismBecauseImBetterThanYou {
+		Whitelist,
+		Blacklist
+	}
 
 }

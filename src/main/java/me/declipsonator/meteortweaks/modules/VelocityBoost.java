@@ -110,7 +110,7 @@ public class VelocityBoost extends Module {
     }
 
     private void boostOnce() {
-        assert mc.player != null;
+        if(mc.player == null) return;
         if (mc.player.isFallFlying() && mc.currentScreen == null) {
             if(type.get() == Type.Once) {
                 if (playSound.get()) {

@@ -95,6 +95,13 @@ public class RideStats extends Module {
             .build()
     );
 
+    private final Setting<Double> height = sgGeneral.add(new DoubleSetting.Builder()
+            .name("height")
+            .description("How high above entities' heads to display it.")
+            .defaultValue(1)
+            .sliderMax(3)
+            .build()
+    );
 
     private final Setting<SettingColor> entityNameColor = sgGeneral.add(new ColorSetting.Builder()
             .name("name-color")
@@ -139,6 +146,7 @@ public class RideStats extends Module {
             if (horse || mule || donkey || llama) {
                 pos.set(entity, event.tickDelta);
                 pos.add(0, entity.getEyeHeight(entity.getPose()) + 0.75, 0);
+                pos.add(0, -1 + height.get(), 0);
                 if (NametagUtils.to2D(pos, scale.get())) {
                     renderHorseNametag((HorseBaseEntity) entity, entity);
                 }

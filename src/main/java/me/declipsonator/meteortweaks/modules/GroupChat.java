@@ -1,6 +1,5 @@
 package me.declipsonator.meteortweaks.modules;
 
-import com.mojang.authlib.GameProfile;
 import meteordevelopment.meteorclient.events.game.SendMessageEvent;
 import meteordevelopment.meteorclient.settings.Setting;
 import meteordevelopment.meteorclient.settings.SettingGroup;
@@ -11,7 +10,6 @@ import meteordevelopment.meteorclient.systems.modules.Module;
 import meteordevelopment.orbit.EventHandler;
 import net.minecraft.client.network.PlayerListEntry;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.player.PlayerEntity;
 
 import java.util.List;
 

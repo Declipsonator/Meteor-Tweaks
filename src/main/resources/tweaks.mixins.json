@@ -3,10 +3,11 @@
   "package": "me.declipsonator.meteortweaks.mixins",
   "compatibilityLevel": "JAVA_16",
   "client": [
-    "FreecamMixin",
-    "TitleScreenMixin",
+    "BoatEntityMixin",
     "EntityMixin",
-    "BoatEntityMixin"
+    "FreecamMixin",
+    "PotionTimerMixin",
+    "TitleScreenMixin"
   ],
   "injectors": {
     "defaultRequire": 1

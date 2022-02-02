@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.Shadow;
 
 import static meteordevelopment.meteorclient.MeteorClient.mc;
 
-@Mixin(Freecam.class)
+@Mixin(value = Freecam.class, remap = false)
 public class FreecamMixin {
 
 
