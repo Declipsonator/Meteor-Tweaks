@@ -44,8 +44,6 @@ public class GroupChat extends Module {
             }
         }
 
-        EntityType.AXOLOTL.getSpawnGroup().name();
-
         event.cancel();
     }
 
