@@ -33,7 +33,6 @@ public class MeteorTweaks extends MeteorAddon {
 		Modules.get().add(new AutoTool());
 		Modules.get().add(new Notifier());
 		Modules.get().add(new TpsSync());
-		Modules.get().add(new StashFinder());
 		Modules.get().add(new RideStats());
 		Modules.get().add(new GroupChat());
 		Modules.get().add(new AutoSign());
@@ -51,6 +50,20 @@ public class MeteorTweaks extends MeteorAddon {
 	public enum whiteBlackNoRacismBecauseImBetterThanYou {
 		Whitelist,
 		Blacklist
+	}
+
+	//For HoleHudMixin
+	public enum Facing {
+		Left(-90),
+		Right(90),
+		Front(0),
+		Back(180);
+
+		public int offset;
+
+		Facing(int offset) {
+			this.offset = offset;
+		}
 	}
 
 }

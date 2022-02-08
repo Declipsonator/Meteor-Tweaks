@@ -6,8 +6,10 @@
     "BoatEntityMixin",
     "EntityMixin",
     "FreecamMixin",
+    "HoleHudMixin",
     "PotionTimerMixin",
-    "TitleScreenMixin"
+    "TitleScreenMixin",
+    "StashFinderMixin"
   ],
   "injectors": {
     "defaultRequire": 1

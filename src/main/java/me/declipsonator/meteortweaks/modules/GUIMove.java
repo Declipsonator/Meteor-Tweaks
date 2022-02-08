@@ -26,6 +26,7 @@ import net.minecraft.client.gui.screen.ingame.*;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.network.packet.c2s.play.PlayerInteractItemC2SPacket;
 import net.minecraft.network.packet.s2c.play.CloseScreenS2CPacket;
 
 import static org.lwjgl.glfw.GLFW.*;
@@ -98,6 +99,13 @@ public class GUIMove extends Module {
             .build()
     );
 
+    private final Setting<Boolean> ghostMove = sgGeneral.add(new BoolSetting.Builder()
+            .name("ghost-move")
+            .description("Only tells the server when you're done moving items.")
+            .defaultValue(true)
+            .build()
+    );
+
     public GUIMove() {
         super(Categories.Movement, "gui-move", "Allows you to perform various actions while in GUIs.");
     }
@@ -160,6 +168,11 @@ public class GUIMove extends Module {
     @EventHandler(priority = EventPriority.HIGHEST)
     private void onReceivePacket(PacketEvent.Receive event) {
         if (event.packet instanceof CloseScreenS2CPacket && antiClose.get()) event.cancel();
+    }
+
+    @EventHandler
+    private void onSendPacket(PacketEvent.Send event) {
+        if (event.packet instanceof PlayerInteractItemC2SPacket && ghostMove.get() && mc.currentScreen != null) event.cancel();
     }
 
     public boolean skip() {
