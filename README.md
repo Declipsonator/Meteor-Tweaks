@@ -5,7 +5,8 @@
 </div>  
 
 ## Credits:
-Due to the nature of this addon, large amounts of code was taken from Meteor Client by Seasnail8169, Minegame159, and Squidoodly. Inspiration for the AntiGhostBlocks module came from the AntiGhostBlocks mod.
+- [Meteor Client](https://github.com/meteordevelopment/meteor-client), for well, the client
+- [AntiGhost](https://www.curseforge.com/minecraft/mc-mods/antighost), for inspiration for the AntiGhostBlocks Module
 
 ## Install:  
 - Go to the releases: https://github.com/Declipsonator/Meteor-Tweaks/releases/latest
