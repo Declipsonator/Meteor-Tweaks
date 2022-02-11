@@ -28,13 +28,14 @@ This applies even if you do make changes.
 ## Features:
 - Notification after launching the client if Tweaks is not on the latest release
 - Vertical Range, Horizontal Range, and On Surface Settings in Scaffold
-- Anti Close Setting in Gui Move
+- Anti Close and GhostMove Setting in Gui Move
 - Inventory Setting in AutoTool, works with the Switch Back setting
 - AutoSign rewrite with more settings
 - Server Join/Leave Messages Setting in Notifier
 - Stashfinder found stashes displays in active module hud
 - Added a Whitelist/Blacklist setting in PotionTimersHud
 - Made EntitySpeed work with boats
+- Made HoleHud display burrow blocks 
 - Addition of the AntiGhostBlocks module; Press a key and remove the Ghost Blocks in your reach
 - Addition of the VelocityBoost module; Press a key and boost your elytra with velocity or get a continuous velocity the direction you're looking
 - Addition of the TpsSync module; It syncs placing and breaking blocks with the server, preventing ghost blocks
