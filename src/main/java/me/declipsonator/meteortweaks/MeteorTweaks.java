@@ -1,5 +1,6 @@
 package me.declipsonator.meteortweaks;
 
+import me.declipsonator.meteortweaks.commands.ReloadBlocks;
 import me.declipsonator.meteortweaks.commands.SoftLeave;
 import me.declipsonator.meteortweaks.hud.ItemCountHud;
 import me.declipsonator.meteortweaks.modules.*;
@@ -27,7 +28,6 @@ public class MeteorTweaks extends MeteorAddon {
 
 		// Modules
 		Modules.get().add(new Scaffold());
-		Modules.get().add(new AntiGhostBlocks());
 		Modules.get().add(new VelocityBoost());
 		Modules.get().add(new GUIMove());
 		Modules.get().add(new AutoTool());
@@ -38,9 +38,11 @@ public class MeteorTweaks extends MeteorAddon {
 		Modules.get().add(new AutoSign());
 		Modules.get().add(new DeathExplore());
 		Modules.get().add(new EntitySpeed());
+		Modules.get().add(new MultiTask());
 
 		// Commands
 		Commands.get().add(new SoftLeave());
+		Commands.get().add(new ReloadBlocks());
 
 		HUD hud = Systems.get(HUD.class);
 		hud.elements.add(new ItemCountHud(hud));

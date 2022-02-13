@@ -73,13 +73,13 @@ public class HoleHudMixin {
                     .build()
             );
 
-             burrowSafe = sgGeneral.add(new BoolSetting.Builder()
+            burrowSafe = sgGeneral.add(new BoolSetting.Builder()
                     .name("only-safe-burrow")
                     .description("Only displays the burrowed block if its in the safe list.")
                     .defaultValue(false)
                     .build()
             );
-             first = false;
+            first = false;
         }
 
         if(!burrowBlock.get()) return;

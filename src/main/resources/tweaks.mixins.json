@@ -9,7 +9,8 @@
     "HoleHudMixin",
     "PotionTimerMixin",
     "TitleScreenMixin",
-    "StashFinderMixin"
+    "StashFinderMixin",
+    "MinecraftClientMixin"
   ],
   "injectors": {
     "defaultRequire": 1
