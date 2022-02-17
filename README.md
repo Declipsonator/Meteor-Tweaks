@@ -44,4 +44,4 @@ This applies even if you do make changes.
 - Addition of the GroupChat module; Send private messages to multiple players at once
 - Addition of the DeathExplore module; Walk around after you die in the loaded chunks
 - Addition of the soft-leave command; Return to the menu without leaving the server (Leaves the server if using multiconnect)
-- Addition of the AntiGhostBlocks command; Remove the Ghost Blocks in your reach
+- Addition of the reload-blocks command; Remove the Ghost Blocks in your reach
