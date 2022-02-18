@@ -65,7 +65,7 @@ public class Confetti extends Module {
 
 
     public Confetti() {
-        super(Categories.Render, "confetti", "Changes the color and amount of totem particles.");
+        super(Categories.Render, "confetti", "Changes totem particle characteristics.");
     }
 
 }
