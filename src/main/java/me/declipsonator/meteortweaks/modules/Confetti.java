@@ -63,15 +63,6 @@ public class Confetti extends Module {
             .build()
     );
 
-    public final Setting<Boolean> updateOnTick = sgGeneral.add(new BoolSetting.Builder()
-            .name("update-on-tick")
-            .description("Updates particle settings every tick.")
-            .defaultValue(true)
-            .build()
-    );
-
-    public int count = 0;
-    public int emitterCount = 0;
 
     public Confetti() {
         super(Categories.Render, "confetti", "Changes the color and amount of totem particles.");
