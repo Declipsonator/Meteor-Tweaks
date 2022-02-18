@@ -3,6 +3,7 @@ package me.declipsonator.meteortweaks;
 import me.declipsonator.meteortweaks.commands.ReloadBlocks;
 import me.declipsonator.meteortweaks.commands.SoftLeave;
 import me.declipsonator.meteortweaks.hud.ItemCountHud;
+import me.declipsonator.meteortweaks.mixins.ElytraFlyMixin;
 import me.declipsonator.meteortweaks.modules.*;
 import meteordevelopment.meteorclient.MeteorClient;
 import meteordevelopment.meteorclient.addons.MeteorAddon;
@@ -10,6 +11,7 @@ import meteordevelopment.meteorclient.systems.Systems;
 import meteordevelopment.meteorclient.systems.commands.Commands;
 import meteordevelopment.meteorclient.systems.hud.HUD;
 import meteordevelopment.meteorclient.systems.modules.Modules;
+import meteordevelopment.meteorclient.systems.modules.movement.elytrafly.ElytraFly;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -39,6 +41,7 @@ public class MeteorTweaks extends MeteorAddon {
 		Modules.get().add(new DeathExplore());
 		Modules.get().add(new EntitySpeed());
 		Modules.get().add(new MultiTask());
+		Modules.get().add(new Confetti());
 
 		// Commands
 		Commands.get().add(new SoftLeave());
@@ -46,26 +49,10 @@ public class MeteorTweaks extends MeteorAddon {
 
 		HUD hud = Systems.get(HUD.class);
 		hud.elements.add(new ItemCountHud(hud));
+
+		Modules.get().get(ElytraFly.class).getInfoString();
 	}
 
-	//For PotionTimerMixin
-	public enum whiteBlackNoRacismBecauseImBetterThanYou {
-		Whitelist,
-		Blacklist
-	}
 
-	//For HoleHudMixin
-	public enum Facing {
-		Left(-90),
-		Right(90),
-		Front(0),
-		Back(180);
-
-		public int offset;
-
-		Facing(int offset) {
-			this.offset = offset;
-		}
-	}
 
 }

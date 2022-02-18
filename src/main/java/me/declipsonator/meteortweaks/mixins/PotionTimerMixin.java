@@ -1,6 +1,7 @@
 package me.declipsonator.meteortweaks.mixins;
 
 import me.declipsonator.meteortweaks.MeteorTweaks;
+import me.declipsonator.meteortweaks.utils.MixinReferences;
 import meteordevelopment.meteorclient.settings.EnumSetting;
 import meteordevelopment.meteorclient.settings.Setting;
 import meteordevelopment.meteorclient.settings.SettingGroup;
@@ -22,14 +23,12 @@ import java.util.List;
 public class PotionTimerMixin extends HudElement {
     private final Color color = new Color();
 
-
-
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
 
-    private final Setting<MeteorTweaks.whiteBlackNoRacismBecauseImBetterThanYou> whiteBlackNoRacismBecauseImBetterThanYouSetting = sgGeneral.add(new EnumSetting.Builder<MeteorTweaks.whiteBlackNoRacismBecauseImBetterThanYou>()
+    private final Setting<MixinReferences.whiteBlackNoRacismBecauseImBetterThanYou> whiteBlackNoRacismBecauseImBetterThanYouSetting = sgGeneral.add(new EnumSetting.Builder<MixinReferences.whiteBlackNoRacismBecauseImBetterThanYou>()
             .name("whitelist-blacklist")
             .description("Whether or not to use a whitelist or a blacklist.")
-            .defaultValue(MeteorTweaks.whiteBlackNoRacismBecauseImBetterThanYou.Blacklist)
+            .defaultValue(MixinReferences.whiteBlackNoRacismBecauseImBetterThanYou.Blacklist)
             .build()
     );
 
@@ -56,8 +55,8 @@ public class PotionTimerMixin extends HudElement {
 
         int i = 0;
         for (StatusEffectInstance statusEffectInstance : mc.player.getStatusEffects()) {
-            if(potions.get().contains(statusEffectInstance.getEffectType()) && whiteBlackNoRacismBecauseImBetterThanYouSetting.get() == MeteorTweaks.whiteBlackNoRacismBecauseImBetterThanYou.Blacklist) continue;
-            else if(!potions.get().contains(statusEffectInstance.getEffectType()) && whiteBlackNoRacismBecauseImBetterThanYouSetting.get() == MeteorTweaks.whiteBlackNoRacismBecauseImBetterThanYou.Whitelist) continue;
+            if(potions.get().contains(statusEffectInstance.getEffectType()) && whiteBlackNoRacismBecauseImBetterThanYouSetting.get() == MixinReferences.whiteBlackNoRacismBecauseImBetterThanYou.Blacklist) continue;
+            else if(!potions.get().contains(statusEffectInstance.getEffectType()) && whiteBlackNoRacismBecauseImBetterThanYouSetting.get() == MixinReferences.whiteBlackNoRacismBecauseImBetterThanYou.Whitelist) continue;
             width = Math.max(width, renderer.textWidth(getString(statusEffectInstance)));
             height += renderer.textHeight();
 
@@ -81,8 +80,8 @@ public class PotionTimerMixin extends HudElement {
         int i = 0;
         for (StatusEffectInstance statusEffectInstance : mc.player.getStatusEffects()) {
             StatusEffect statusEffect = statusEffectInstance.getEffectType();
-            if(potions.get().contains(statusEffect) && whiteBlackNoRacismBecauseImBetterThanYouSetting.get() == MeteorTweaks.whiteBlackNoRacismBecauseImBetterThanYou.Blacklist) continue;
-            else if(!potions.get().contains(statusEffectInstance.getEffectType()) && whiteBlackNoRacismBecauseImBetterThanYouSetting.get() == MeteorTweaks.whiteBlackNoRacismBecauseImBetterThanYou.Whitelist) continue;
+            if(potions.get().contains(statusEffect) && whiteBlackNoRacismBecauseImBetterThanYouSetting.get() == MixinReferences.whiteBlackNoRacismBecauseImBetterThanYou.Blacklist) continue;
+            else if(!potions.get().contains(statusEffectInstance.getEffectType()) && whiteBlackNoRacismBecauseImBetterThanYouSetting.get() == MixinReferences.whiteBlackNoRacismBecauseImBetterThanYou.Whitelist) continue;
 
             int c = statusEffect.getColor();
             color.r = Color.toRGBAR(c);

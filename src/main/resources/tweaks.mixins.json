@@ -10,7 +10,12 @@
     "PotionTimerMixin",
     "TitleScreenMixin",
     "StashFinderMixin",
-    "MinecraftClientMixin"
+    "MinecraftClientMixin",
+    "ElytraFlyMixin",
+    "ElytraFlightModeMixin",
+    "TotemParticleMixin",
+    "ClientPacketListenerMixin",
+    "EmitterParticleMixin"
   ],
   "injectors": {
     "defaultRequire": 1

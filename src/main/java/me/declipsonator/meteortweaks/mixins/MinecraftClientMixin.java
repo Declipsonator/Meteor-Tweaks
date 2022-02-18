@@ -6,11 +6,7 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.network.ClientPlayerInteractionManager;
 import net.minecraft.client.option.GameOptions;
-import net.minecraft.client.render.GameRenderer;
 import net.minecraft.client.world.ClientWorld;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -20,6 +16,8 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import javax.annotation.Nullable;
+
+import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 @Mixin(MinecraftClient.class)
 public class MinecraftClientMixin {
@@ -31,14 +29,10 @@ public class MinecraftClientMixin {
     @Shadow
     private void doAttack() {}
     @Shadow
-    @Nullable
-    public ClientPlayerInteractionManager interactionManager;
+    private void doItemUse() {}
     @Shadow
     @Nullable
     public ClientWorld world;
-    @Shadow
-    @Final
-    public GameRenderer gameRenderer;
 
     @Redirect(method = "handleBlockBreaking", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/network/ClientPlayerEntity;isUsingItem()Z"))
     public boolean breakBlock(ClientPlayerEntity cpim) {
@@ -56,6 +50,14 @@ public class MinecraftClientMixin {
         return cpim.isBreakingBlock();
     }
 
+    @Inject(method = "doItemUse", at = @At("HEAD"), cancellable = true)
+    private void doItemUse(CallbackInfo ci) {
+        if(mc.player.isUsingItem()) {
+            ci.cancel();
+            return;
+        }
+    }
+
 
 
     @Redirect(method = "handleInputEvents", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/network/ClientPlayerEntity;isUsingItem()Z"))
@@ -63,6 +65,10 @@ public class MinecraftClientMixin {
         if(Modules.get().get(MultiTask.class).isActive()) {
             while(this.options.keyAttack.wasPressed()) {
                 this.doAttack();
+            }
+
+            while(this.options.keyUse.wasPressed()) {
+                this.doItemUse();
             }
         }
         return player.isUsingItem();
