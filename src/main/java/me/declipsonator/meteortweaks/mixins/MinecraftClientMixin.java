@@ -50,13 +50,6 @@ public class MinecraftClientMixin {
         return cpim.isBreakingBlock();
     }
 
-    @Inject(method = "doItemUse", at = @At("HEAD"), cancellable = true)
-    private void doItemUse(CallbackInfo ci) {
-        if(mc.player.isUsingItem()) {
-            ci.cancel();
-            return;
-        }
-    }
 
 
 
