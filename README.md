@@ -5,7 +5,7 @@
 </div>  
 
 ## Credits:
-- [Meteor Client](https://github.com/meteordevelopment/meteor-client), for well, the client
+- [Meteor Client](https://github.com/meteordevelopment/meteor-client), for, well, the client
 - [AntiGhost](https://www.curseforge.com/minecraft/mc-mods/antighost), for inspiration for the reload-blocks command
 
 ## Install:  
