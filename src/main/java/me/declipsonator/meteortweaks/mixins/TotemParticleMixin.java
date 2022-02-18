@@ -31,6 +31,6 @@ public class TotemParticleMixin extends AnimatedParticle {
             this.setColor((float)secondColor.x,(float) secondColor.y,(float) firstColor.z);
         }
         this.scale *= confetti.sizeOfParticles.get();
-        this.maxAge *= confetti.particleTimeLasting.get();
+        this.maxAge = confetti.particleTimeLasting.get();
     }
 }
