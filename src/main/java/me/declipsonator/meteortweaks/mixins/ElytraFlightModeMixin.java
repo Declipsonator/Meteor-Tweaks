@@ -68,77 +68,79 @@ public class ElytraFlightModeMixin {
 
     @Inject(method = "handleHorizontalSpeed", at = @At("HEAD"), cancellable = true)
     private void gradualHorizontalIncrease(PlayerMoveEvent event, CallbackInfo ci) {
-        boolean a = false;
-        boolean b = false;
-        gradualTogether += elytraFly.horizontalSpeed.get() / MixinReferences.gradualAccelerationTime.get();
+        if(elytraFly.gradualAcceleration.get()) {
+            boolean a = false;
+            boolean b = false;
+            gradualTogether += elytraFly.horizontalSpeed.get() / MixinReferences.gradualAccelerationTime.get();
 
-        if (mc.options.keyForward.isPressed()) {
-            gradualFoward += elytraFly.horizontalSpeed.get() / MixinReferences.gradualAccelerationTime.get();
+            if (mc.options.keyForward.isPressed()) {
+                gradualFoward += elytraFly.horizontalSpeed.get() / MixinReferences.gradualAccelerationTime.get();
 
-            if(gradualTogether < elytraFly.horizontalSpeed.get() && !MixinReferences.whenChangingDirections.get()) {
-                velX += forward.x * gradualTogether * 10;
-                velZ += forward.z * gradualTogether * 10;
-            } else if (gradualFoward < elytraFly.horizontalSpeed.get()) {
-                velX += forward.x * gradualFoward * 10;
-                velZ += forward.z * gradualFoward * 10;
-            } else {
-                velX += forward.x * elytraFly.horizontalSpeed.get() * 10;
-                velZ += forward.z * elytraFly.horizontalSpeed.get() * 10;
+                if(gradualTogether < elytraFly.horizontalSpeed.get() && !MixinReferences.whenChangingDirections.get()) {
+                    velX += forward.x * gradualTogether * 10;
+                    velZ += forward.z * gradualTogether * 10;
+                } else if (gradualFoward < elytraFly.horizontalSpeed.get()) {
+                    velX += forward.x * gradualFoward * 10;
+                    velZ += forward.z * gradualFoward * 10;
+                } else {
+                    velX += forward.x * elytraFly.horizontalSpeed.get() * 10;
+                    velZ += forward.z * elytraFly.horizontalSpeed.get() * 10;
+                }
+                a = true;
+            } else if (mc.options.keyBack.isPressed()) {
+                gradualBack += elytraFly.horizontalSpeed.get() / MixinReferences.gradualAccelerationTime.get();
+
+                if(gradualTogether < elytraFly.horizontalSpeed.get() && !MixinReferences.whenChangingDirections.get()) {
+                    velX -= forward.x * gradualTogether * 10;
+                    velZ -= forward.z * gradualTogether * 10;
+                } else if (gradualBack < elytraFly.horizontalSpeed.get()) {
+                    velX -= forward.x * gradualBack * 10;
+                    velZ -= forward.z * gradualBack * 10;
+                } else {
+                    velX -= forward.x * elytraFly.horizontalSpeed.get() * 10;
+                    velZ -= forward.z * elytraFly.horizontalSpeed.get() * 10;
+                }
+                a = true;
             }
-            a = true;
-        } else if (mc.options.keyBack.isPressed()) {
-            gradualBack += elytraFly.horizontalSpeed.get() / MixinReferences.gradualAccelerationTime.get();
 
-            if(gradualTogether < elytraFly.horizontalSpeed.get() && !MixinReferences.whenChangingDirections.get()) {
-                velX -= forward.x * gradualTogether * 10;
-                velZ -= forward.z * gradualTogether * 10;
-            } else if (gradualBack < elytraFly.horizontalSpeed.get()) {
-                velX -= forward.x * gradualBack * 10;
-                velZ -= forward.z * gradualBack * 10;
-            } else {
-                velX -= forward.x * elytraFly.horizontalSpeed.get() * 10;
-                velZ -= forward.z * elytraFly.horizontalSpeed.get() * 10;
+            if (mc.options.keyRight.isPressed()) {
+                gradualRight += elytraFly.horizontalSpeed.get() / MixinReferences.gradualAccelerationTime.get();
+
+                if(gradualTogether < elytraFly.horizontalSpeed.get() && !MixinReferences.whenChangingDirections.get()) {
+                    velX += right.x * gradualTogether * 10;
+                    velZ += right.z * gradualTogether * 10;
+                } else if (gradualRight < elytraFly.horizontalSpeed.get()) {
+                    velX += right.x * gradualRight * 10;
+                    velZ += right.z * gradualRight * 10;
+                } else {
+                    velX += right.x * elytraFly.horizontalSpeed.get() * 10;
+                    velZ += right.z * elytraFly.horizontalSpeed.get() * 10;
+                }
+                b = true;
+
+            } else if (mc.options.keyLeft.isPressed()) {
+                gradualLeft += elytraFly.horizontalSpeed.get() / MixinReferences.gradualAccelerationTime.get();
+
+                if(gradualTogether < elytraFly.horizontalSpeed.get() && !MixinReferences.whenChangingDirections.get()) {
+                    velX -= right.x * gradualTogether * 10;
+                    velZ -= right.z * gradualTogether * 10;
+                } else if (gradualLeft < elytraFly.horizontalSpeed.get()) {
+                    velX -= right.x * gradualLeft * 10;
+                    velZ -= right.z * gradualLeft * 10;
+                } else {
+                    velX -= right.x * elytraFly.horizontalSpeed.get() * 10;
+                    velZ -= right.z * elytraFly.horizontalSpeed.get() * 10;
+                }
+                b = true;
             }
-            a = true;
+
+            if (a && b) {
+                double diagonal = 1 / Math.sqrt(2);
+                velX *= diagonal;
+                velZ *= diagonal;
+            }
+            ci.cancel();
         }
-
-        if (mc.options.keyRight.isPressed()) {
-            gradualRight += elytraFly.horizontalSpeed.get() / MixinReferences.gradualAccelerationTime.get();
-
-            if(gradualTogether < elytraFly.horizontalSpeed.get() && !MixinReferences.whenChangingDirections.get()) {
-                velX += right.x * gradualTogether * 10;
-                velZ += right.z * gradualTogether * 10;
-            } else if (gradualRight < elytraFly.horizontalSpeed.get()) {
-                velX += right.x * gradualRight * 10;
-                velZ += right.z * gradualRight * 10;
-            } else {
-                velX += right.x * elytraFly.horizontalSpeed.get() * 10;
-                velZ += right.z * elytraFly.horizontalSpeed.get() * 10;
-            }
-            b = true;
-
-        } else if (mc.options.keyLeft.isPressed()) {
-            gradualLeft += elytraFly.horizontalSpeed.get() / MixinReferences.gradualAccelerationTime.get();
-
-            if(gradualTogether < elytraFly.horizontalSpeed.get() && !MixinReferences.whenChangingDirections.get()) {
-                velX -= right.x * gradualTogether * 10;
-                velZ -= right.z * gradualTogether * 10;
-            } else if (gradualLeft < elytraFly.horizontalSpeed.get()) {
-                velX -= right.x * gradualLeft * 10;
-                velZ -= right.z * gradualLeft * 10;
-            } else {
-                velX -= right.x * elytraFly.horizontalSpeed.get() * 10;
-                velZ -= right.z * elytraFly.horizontalSpeed.get() * 10;
-            }
-            b = true;
-        }
-
-        if (a && b) {
-            double diagonal = 1 / Math.sqrt(2);
-            velX *= diagonal;
-            velZ *= diagonal;
-        }
-        ci.cancel();
     }
 
     @Inject(method = "handleVerticalSpeed", at = @At("TAIL"))
