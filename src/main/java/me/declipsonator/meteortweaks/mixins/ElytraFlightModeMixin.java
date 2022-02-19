@@ -68,7 +68,7 @@ public class ElytraFlightModeMixin {
 
     @Inject(method = "handleHorizontalSpeed", at = @At("HEAD"), cancellable = true)
     private void gradualHorizontalIncrease(PlayerMoveEvent event, CallbackInfo ci) {
-        if(elytraFly.gradualAcceleration.get()) {
+        if(elytraFly.MixinReferences.get()) {
             boolean a = false;
             boolean b = false;
             gradualTogether += elytraFly.horizontalSpeed.get() / MixinReferences.gradualAccelerationTime.get();
