@@ -105,7 +105,7 @@ public class AutoTool extends Module {
     private void onTick(TickEvent.Post event) {
         if (Modules.get().isActive(InfinityMiner.class)) return;
 
-        if (switchBack.get() && !mc.options.keyAttack.isPressed() && wasPressed && previousToolSlot > 8) {
+        if (switchBack.get() && !mc.options.attackKey.isPressed() && wasPressed && previousToolSlot > 8) {
             assert mc.player != null;
             InvUtils.move().fromHotbar(newToolSlot).to(previousToolSlot);
             if(previousSelectedSlot != -1) mc.player.getInventory().selectedSlot = previousSelectedSlot;
@@ -113,7 +113,7 @@ public class AutoTool extends Module {
             previousSelectedSlot = -1;
             wasPressed = false;
             return;
-        } else if(switchBack.get() && !mc.options.keyAttack.isPressed() && wasPressed && InvUtils.previousSlot != -1) {
+        } else if(switchBack.get() && !mc.options.attackKey.isPressed() && wasPressed && InvUtils.previousSlot != -1) {
             InvUtils.swapBack();
             previousToolSlot = -1;
             previousSelectedSlot = -1;
@@ -131,7 +131,7 @@ public class AutoTool extends Module {
             ticks--;
         }
 
-        wasPressed = mc.options.keyAttack.isPressed();
+        wasPressed = mc.options.attackKey.isPressed();
     }
 
     @EventHandler(priority = EventPriority.HIGH)
@@ -191,7 +191,7 @@ public class AutoTool extends Module {
         currentStack = mc.player.getMainHandStack();
 
         if (shouldStopUsing(currentStack) && isTool(currentStack)) {
-            mc.options.keyAttack.setPressed(false);
+            mc.options.attackKey.setPressed(false);
             event.setCancelled(true);
         }
     }
