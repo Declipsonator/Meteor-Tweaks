@@ -27,7 +27,9 @@ public class MinecraftClientMixin {
     @Final
     public GameOptions options;
     @Shadow
-    private void doAttack() {}
+    private boolean doAttack() {
+        return false;
+    }
     @Shadow
     private void doItemUse() {}
     @Shadow
@@ -56,11 +58,11 @@ public class MinecraftClientMixin {
     @Redirect(method = "handleInputEvents", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/network/ClientPlayerEntity;isUsingItem()Z"))
     public boolean attackCheck(ClientPlayerEntity instance) {
         if(Modules.get().get(MultiTask.class).isActive()) {
-            while(this.options.keyAttack.wasPressed()) {
+            while(this.options.attackKey.wasPressed()) {
                 this.doAttack();
             }
 
-            while(this.options.keyUse.wasPressed()) {
+            while(this.options.useKey.wasPressed()) {
                 this.doItemUse();
             }
         }
