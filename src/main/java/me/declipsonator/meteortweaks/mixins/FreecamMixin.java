@@ -31,29 +31,29 @@ public class FreecamMixin {
 
         boolean cancel = true;
 
-        if (mc.options.keyForward.matchesKey(event.key, 0) || mc.options.keyForward.matchesMouse(event.key)) {
+        if (mc.options.forwardKey.matchesKey(event.key, 0) || mc.options.forwardKey.matchesMouse(event.key)) {
             forward = event.action != KeyAction.Release;
-            mc.options.keyForward.setPressed(false);
+            mc.options.forwardKey.setPressed(false);
         }
-        else if (mc.options.keyBack.matchesKey(event.key, 0) || mc.options.keyBack.matchesMouse(event.key)) {
+        else if (mc.options.backKey.matchesKey(event.key, 0) || mc.options.backKey.matchesMouse(event.key)) {
             backward = event.action != KeyAction.Release;
-            mc.options.keyBack.setPressed(false);
+            mc.options.backKey.setPressed(false);
         }
-        else if (mc.options.keyRight.matchesKey(event.key, 0) || mc.options.keyRight.matchesMouse(event.key)) {
+        else if (mc.options.rightKey.matchesKey(event.key, 0) || mc.options.rightKey.matchesMouse(event.key)) {
             right = event.action != KeyAction.Release;
-            mc.options.keyRight.setPressed(false);
+            mc.options.rightKey.setPressed(false);
         }
-        else if (mc.options.keyLeft.matchesKey(event.key, 0) || mc.options.keyLeft.matchesMouse(event.key)) {
+        else if (mc.options.leftKey.matchesKey(event.key, 0) || mc.options.leftKey.matchesMouse(event.key)) {
             left = event.action != KeyAction.Release;
-            mc.options.keyLeft.setPressed(false);
+            mc.options.leftKey.setPressed(false);
         }
-        else if (mc.options.keyJump.matchesKey(event.key, 0) || mc.options.keyJump.matchesMouse(event.key)) {
+        else if (mc.options.jumpKey.matchesKey(event.key, 0) || mc.options.jumpKey.matchesMouse(event.key)) {
             up = event.action != KeyAction.Release;
-            mc.options.keyJump.setPressed(false);
+            mc.options.jumpKey.setPressed(false);
         }
-        else if (mc.options.keySneak.matchesKey(event.key, 0) || mc.options.keySneak.matchesMouse(event.key)) {
+        else if (mc.options.sneakKey.matchesKey(event.key, 0) || mc.options.sneakKey.matchesMouse(event.key)) {
             down = event.action != KeyAction.Release;
-            mc.options.keySneak.setPressed(false);
+            mc.options.sneakKey.setPressed(false);
         }
         else {
             cancel = false;
