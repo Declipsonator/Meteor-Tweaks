@@ -36,27 +36,27 @@ public class ElytraFlightModeMixin {
     @Inject(method = "onTick", at = @At("HEAD"))
     private void resetAccelerates(CallbackInfo ci) {
         int notPressed = 0;
-        if (!mc.options.keyJump.isPressed()) {
+        if (!mc.options.jumpKey.isPressed()) {
             notPressed++;
             gradualUp = 0;
         }
-        if(!mc.options.keySneak.isPressed()) {
+        if(!mc.options.sneakKey.isPressed()) {
             notPressed++;
             gradualDown = 0;
         }
-        if(!mc.options.keyForward.isPressed()) {
+        if(!mc.options.forwardKey.isPressed()) {
             notPressed++;
             gradualFoward = 0;
         }
-        if(!mc.options.keyBack.isPressed()) {
+        if(!mc.options.backKey.isPressed()) {
             notPressed++;
             gradualBack = 0;
         }
-        if(!mc.options.keyRight.isPressed()) {
+        if(!mc.options.rightKey.isPressed()) {
             notPressed++;
             gradualRight = 0;
         }
-        if(!mc.options.keyLeft.isPressed()) {
+        if(!mc.options.leftKey.isPressed()) {
             notPressed++;
             gradualLeft = 0;
         }
@@ -73,7 +73,7 @@ public class ElytraFlightModeMixin {
             boolean b = false;
             gradualTogether += elytraFly.horizontalSpeed.get() / MixinReferences.gradualAccelerationTime.get();
 
-            if (mc.options.keyForward.isPressed()) {
+            if (mc.options.forwardKey.isPressed()) {
                 gradualFoward += elytraFly.horizontalSpeed.get() / MixinReferences.gradualAccelerationTime.get();
 
                 if(gradualTogether < elytraFly.horizontalSpeed.get() && !MixinReferences.whenChangingDirections.get()) {
@@ -87,7 +87,7 @@ public class ElytraFlightModeMixin {
                     velZ += forward.z * elytraFly.horizontalSpeed.get() * 10;
                 }
                 a = true;
-            } else if (mc.options.keyBack.isPressed()) {
+            } else if (mc.options.backKey.isPressed()) {
                 gradualBack += elytraFly.horizontalSpeed.get() / MixinReferences.gradualAccelerationTime.get();
 
                 if(gradualTogether < elytraFly.horizontalSpeed.get() && !MixinReferences.whenChangingDirections.get()) {
@@ -103,7 +103,7 @@ public class ElytraFlightModeMixin {
                 a = true;
             }
 
-            if (mc.options.keyRight.isPressed()) {
+            if (mc.options.rightKey.isPressed()) {
                 gradualRight += elytraFly.horizontalSpeed.get() / MixinReferences.gradualAccelerationTime.get();
 
                 if(gradualTogether < elytraFly.horizontalSpeed.get() && !MixinReferences.whenChangingDirections.get()) {
@@ -118,7 +118,7 @@ public class ElytraFlightModeMixin {
                 }
                 b = true;
 
-            } else if (mc.options.keyLeft.isPressed()) {
+            } else if (mc.options.leftKey.isPressed()) {
                 gradualLeft += elytraFly.horizontalSpeed.get() / MixinReferences.gradualAccelerationTime.get();
 
                 if(gradualTogether < elytraFly.horizontalSpeed.get() && !MixinReferences.whenChangingDirections.get()) {
@@ -146,7 +146,7 @@ public class ElytraFlightModeMixin {
     @Inject(method = "handleVerticalSpeed", at = @At("TAIL"))
     private void gradualVerticalIncrease(PlayerMoveEvent event, CallbackInfo ci) {
         if(!MixinReferences.vertically.get() || !MixinReferences.gradualAcceleration.get()) return;
-        if (mc.options.keyJump.isPressed()) {
+        if (mc.options.jumpKey.isPressed()) {
             gradualUp += elytraFly.verticalSpeed.get() / MixinReferences.gradualAccelerationTime.get();
 
             if(gradualTogether < elytraFly.horizontalSpeed.get() && !MixinReferences.whenChangingDirections.get()) {
@@ -159,7 +159,7 @@ public class ElytraFlightModeMixin {
 
 
 
-        } else if (mc.options.keySneak.isPressed()) {
+        } else if (mc.options.sneakKey.isPressed()) {
             gradualDown += elytraFly.verticalSpeed.get() / MixinReferences.gradualAccelerationTime.get();
 
             if(gradualTogether < elytraFly.horizontalSpeed.get() && !MixinReferences.whenChangingDirections.get()) {
@@ -174,6 +174,3 @@ public class ElytraFlightModeMixin {
     }
 
 }
-
-
-
