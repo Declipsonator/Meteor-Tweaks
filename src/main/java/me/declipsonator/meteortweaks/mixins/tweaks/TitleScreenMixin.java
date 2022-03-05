@@ -35,7 +35,7 @@ public class TitleScreenMixin {
                         YesNoPrompt.create()
                                 .id("meteortweaks-update")
                                 .title("Outdated")
-                                .message("A new version of Meteor GameTweaks has been released.")
+                                .message("A new version of Meteor Tweaks has been released.")
                                 .message("Current version: " + TweaksUtil.version().getFriendlyString())
                                 .message("Latest version: " + Version.parse(githubReleaseJson.getTagName().replace("v", "")).getFriendlyString())
                                 .message("Update?")
