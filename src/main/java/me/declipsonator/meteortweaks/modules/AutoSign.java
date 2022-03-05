@@ -34,7 +34,7 @@ public class AutoSign extends Module {
     private final Setting<String> lineTwo = sgGeneral.add(new StringSetting.Builder()
             .name("line-two")
             .description("What to put on the second line of the sign.")
-            .defaultValue("GameTweaks")
+            .defaultValue("Tweaks")
             .build()
     );
 
