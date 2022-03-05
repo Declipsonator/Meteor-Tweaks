@@ -1,21 +1,25 @@
 {
   "required": true,
-  "package": "me.declipsonator.meteortweaks.mixins",
+  "package": "me.declipsonator.meteortweaks.mixins.tweaks",
   "compatibilityLevel": "JAVA_16",
   "client": [
     "BoatEntityMixin",
     "EntityMixin",
-    "FreecamMixin",
-    "HoleHudMixin",
-    "PotionTimerMixin",
     "TitleScreenMixin",
-    "StashFinderMixin",
     "MinecraftClientMixin",
-    "ElytraFlyMixin",
-    "ElytraFlightModeMixin",
     "TotemParticleMixin",
     "ClientPacketListenerMixin",
-    "EmitterParticleMixin"
+    "EmitterParticleMixin",
+    "ClientPlayNetworkHandlerMixin",
+    "MixinScreenshotRecorder",
+    "MainMixin",
+    "ToastManagerMixin",
+    "BatEntityMixin",
+    "ClientPlayerInteractionManagerMixin",
+    "RecipeBookWidgetMixin",
+    "PlayerListEntryMixin",
+    "MixinDeathScreen",
+    "RenderLayersMixin"
   ],
   "injectors": {
     "defaultRequire": 1

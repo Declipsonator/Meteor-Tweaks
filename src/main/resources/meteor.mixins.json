@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "package": "me.declipsonator.meteortweaks.mixins.meteor",
+  "compatibilityLevel": "JAVA_16",
+  "client": [
+    "GuiMoveMixin",
+    "HoleHudMixin",
+    "PotionTimerMixin",
+    "StashFinderMixin",
+    "ElytraFlyMixin",
+    "ElytraFlightModeMixin",
+    "SpeedMineMixin",
+    "NoRenderMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
