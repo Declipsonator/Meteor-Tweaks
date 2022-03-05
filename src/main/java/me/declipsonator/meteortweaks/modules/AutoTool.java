@@ -40,7 +40,7 @@ public class AutoTool extends Module {
             .name("hotbar-first")
             .description("Whether or not to prefer using tools from the hotbar over tools from your inventory.")
             .defaultValue(true)
-            .visible(() -> inventory.get())
+            .visible(inventory::get)
             .build()
     );
 

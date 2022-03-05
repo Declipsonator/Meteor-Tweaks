@@ -19,13 +19,14 @@
     ]
   },
   "mixins": [
-    "tweaks.mixins.json"
+    "tweaks.mixins.json",
+    "meteor.mixins.json"
   ],
   "custom": {
     "meteor-client:color": "155,1,1"
   },
   "depends": {
-    "java": ">=16",
+      "java": ">=16",
     "minecraft": ">=@mc_version@",
     "meteor-client": "*"
   }

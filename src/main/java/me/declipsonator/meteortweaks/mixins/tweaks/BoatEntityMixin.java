@@ -1,4 +1,4 @@
-package me.declipsonator.meteortweaks.mixins;
+package me.declipsonator.meteortweaks.mixins.tweaks;
 
 import me.declipsonator.meteortweaks.modules.EntitySpeed;
 import meteordevelopment.meteorclient.systems.modules.Modules;

@@ -1,4 +1,4 @@
-package me.declipsonator.meteortweaks.mixins;
+package me.declipsonator.meteortweaks.mixins.meteor;
 
 import me.declipsonator.meteortweaks.utils.MixinReferences;
 import meteordevelopment.meteorclient.events.entity.player.PlayerMoveEvent;
@@ -44,7 +44,7 @@ public class ElytraFlightModeMixin {
             notPressed++;
             gradualDown = 0;
         }
-        if(!mc.options.forwardKey.isPressed()) {
+        if(!mc.options.sneakKey.isPressed()) {
             notPressed++;
             gradualFoward = 0;
         }
@@ -76,7 +76,7 @@ public class ElytraFlightModeMixin {
             if (mc.options.forwardKey.isPressed()) {
                 gradualFoward += elytraFly.horizontalSpeed.get() / MixinReferences.gradualAccelerationTime.get();
 
-                if(gradualTogether < elytraFly.horizontalSpeed.get() && !MixinReferences.whenChangingDirections.get()) {
+                if (gradualTogether < elytraFly.horizontalSpeed.get() && !MixinReferences.whenChangingDirections.get()) {
                     velX += forward.x * gradualTogether * 10;
                     velZ += forward.z * gradualTogether * 10;
                 } else if (gradualFoward < elytraFly.horizontalSpeed.get()) {
@@ -90,7 +90,7 @@ public class ElytraFlightModeMixin {
             } else if (mc.options.backKey.isPressed()) {
                 gradualBack += elytraFly.horizontalSpeed.get() / MixinReferences.gradualAccelerationTime.get();
 
-                if(gradualTogether < elytraFly.horizontalSpeed.get() && !MixinReferences.whenChangingDirections.get()) {
+                if (gradualTogether < elytraFly.horizontalSpeed.get() && !MixinReferences.whenChangingDirections.get()) {
                     velX -= forward.x * gradualTogether * 10;
                     velZ -= forward.z * gradualTogether * 10;
                 } else if (gradualBack < elytraFly.horizontalSpeed.get()) {
@@ -106,7 +106,7 @@ public class ElytraFlightModeMixin {
             if (mc.options.rightKey.isPressed()) {
                 gradualRight += elytraFly.horizontalSpeed.get() / MixinReferences.gradualAccelerationTime.get();
 
-                if(gradualTogether < elytraFly.horizontalSpeed.get() && !MixinReferences.whenChangingDirections.get()) {
+                if (gradualTogether < elytraFly.horizontalSpeed.get() && !MixinReferences.whenChangingDirections.get()) {
                     velX += right.x * gradualTogether * 10;
                     velZ += right.z * gradualTogether * 10;
                 } else if (gradualRight < elytraFly.horizontalSpeed.get()) {
@@ -121,7 +121,7 @@ public class ElytraFlightModeMixin {
             } else if (mc.options.leftKey.isPressed()) {
                 gradualLeft += elytraFly.horizontalSpeed.get() / MixinReferences.gradualAccelerationTime.get();
 
-                if(gradualTogether < elytraFly.horizontalSpeed.get() && !MixinReferences.whenChangingDirections.get()) {
+                if (gradualTogether < elytraFly.horizontalSpeed.get() && !MixinReferences.whenChangingDirections.get()) {
                     velX -= right.x * gradualTogether * 10;
                     velZ -= right.z * gradualTogether * 10;
                 } else if (gradualLeft < elytraFly.horizontalSpeed.get()) {
@@ -174,3 +174,6 @@ public class ElytraFlightModeMixin {
     }
 
 }
+
+
+

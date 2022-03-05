@@ -1,4 +1,4 @@
-package me.declipsonator.meteortweaks.mixins;
+package me.declipsonator.meteortweaks.mixins.meteor;
 
 import meteordevelopment.meteorclient.systems.modules.Category;
 import meteordevelopment.meteorclient.systems.modules.Module;

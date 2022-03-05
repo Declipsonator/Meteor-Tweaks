@@ -3,7 +3,7 @@
  */
 
 
-package me.declipsonator.meteortweaks.mixins;
+package me.declipsonator.meteortweaks.mixins.meteor;
 
 import meteordevelopment.meteorclient.gui.screens.HudEditorScreen;
 import meteordevelopment.meteorclient.gui.screens.HudElementScreen;

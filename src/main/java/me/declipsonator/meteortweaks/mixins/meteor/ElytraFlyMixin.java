@@ -1,4 +1,4 @@
-package me.declipsonator.meteortweaks.mixins;
+package me.declipsonator.meteortweaks.mixins.meteor;
 
 import me.declipsonator.meteortweaks.utils.MixinReferences;
 import meteordevelopment.meteorclient.settings.*;

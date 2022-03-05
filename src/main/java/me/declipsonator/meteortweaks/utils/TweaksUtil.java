@@ -5,6 +5,7 @@ import meteordevelopment.meteorclient.utils.network.Http;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.Version;
 
+import java.awt.image.BufferedImage;
 import java.util.UUID;
 
 public class TweaksUtil {
@@ -22,4 +23,9 @@ public class TweaksUtil {
         String accountString = Http.get("https://api.mojang.com/user/profile/" + uuid).sendString();
         return new Gson().fromJson(accountString, Account.class);
     }
+
+    public static void copyBufferedImage(BufferedImage image) {
+
+    }
 }
+

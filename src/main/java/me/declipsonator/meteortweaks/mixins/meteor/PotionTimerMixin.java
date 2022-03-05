@@ -1,4 +1,4 @@
-package me.declipsonator.meteortweaks.mixins;
+package me.declipsonator.meteortweaks.mixins.meteor;
 
 import me.declipsonator.meteortweaks.MeteorTweaks;
 import me.declipsonator.meteortweaks.utils.MixinReferences;
