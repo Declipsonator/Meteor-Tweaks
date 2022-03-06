@@ -16,7 +16,7 @@
 ## Info
 - Report a Bug or Suggest Something: https://github.com/Declipsonator/Meteor-Tweaks/issues
 - Get Help or Just Talk: https://dsc.gg/meteor-tweaks
-- [Get Statistics About Tweaks](https://raw.githubusercontent.com/Declipsonator/Tweaks-Stats/main/Declipsonator/Meteor-Tweaks/latest-report/report.pdf)
+- Get Statistics About Tweaks [here](https://raw.githubusercontent.com/Declipsonator/Tweaks-Stats/main/Declipsonator/Meteor-Tweaks/latest-report/report.pdf)
 
 ## Using Code
 If you plan to use code from Meteor Tweaks, please do the following:
