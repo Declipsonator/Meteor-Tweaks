@@ -39,7 +39,7 @@ public class EntitySpeed extends Module {
 
     private final Setting<Boolean> onlyOnGround = sgGeneral.add(new BoolSetting.Builder()
             .name("only-on-ground")
-            .description("Use speed only when standing on a block.")
+            .description("Use speed only when standing on MainMixin block.")
             .defaultValue(false)
             .build()
     );
@@ -85,6 +85,7 @@ public class EntitySpeed extends Module {
 
         Vec3d vel = PlayerUtils.getHorizontalVelocity(speed.get());
         ((IVec3d) event.movement).setXZ(vel.x, vel.z);
+
     }
 
     @Override

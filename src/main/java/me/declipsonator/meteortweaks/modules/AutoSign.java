@@ -21,8 +21,8 @@ import net.minecraft.util.math.Vec3d;
 import java.util.List;
 
 public class AutoSign extends Module {
-    SettingGroup sgGeneral = settings.getDefaultGroup();
-    SettingGroup sgExtra = settings.createGroup("Visible");
+    final SettingGroup sgGeneral = settings.getDefaultGroup();
+    final SettingGroup sgExtra = settings.createGroup("Visible");
 
     private final Setting<String> lineOne = sgGeneral.add(new StringSetting.Builder()
             .name("line-one")

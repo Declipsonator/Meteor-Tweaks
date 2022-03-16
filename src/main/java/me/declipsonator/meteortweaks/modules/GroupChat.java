@@ -13,7 +13,7 @@ import net.minecraft.client.network.PlayerListEntry;
 import java.util.List;
 
 public class GroupChat extends Module {
-    SettingGroup sgGeneral = settings.getDefaultGroup();
+    final SettingGroup sgGeneral = settings.getDefaultGroup();
 
     private final Setting<List<String>> players = sgGeneral.add(new StringListSetting.Builder()
             .name("players")

@@ -21,6 +21,7 @@ public class TotemParticleMixin extends AnimatedParticle {
     @Inject(method = "<init>", at = @At("TAIL"))
     private void theTick(ClientWorld world, double x, double y, double z, double velocityX, double velocityY, double velocityZ, SpriteProvider spriteProvider, CallbackInfo ci) {
         Confetti confetti = Modules.get().get(Confetti.class);
+        if(confetti == null) return;
         if(!confetti.isActive()) return;
         Vec3d firstColor = confetti.particleColorOne.get().getVec3d();
         Vec3d secondColor = confetti.particleColorTwo.get().getVec3d();

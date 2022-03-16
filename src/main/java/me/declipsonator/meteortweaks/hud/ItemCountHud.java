@@ -19,7 +19,6 @@ import net.minecraft.item.Items;
 
 import java.util.List;
 
-;
 
 public class ItemCountHud extends HudElement {
     private final SettingGroup sgGeneral = settings.getDefaultGroup();

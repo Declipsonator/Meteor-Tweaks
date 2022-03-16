@@ -41,7 +41,7 @@ public class SpeedMineMixin extends Module {
         if(first) {
             MixinReferences.confirmBreak = sgGeneral.add(new BoolSetting.Builder()
                     .name("confirm-break")
-                    .description("Comfirms a block broken with the server (increasing break chance).")
+                    .description("Comfirms MainMixin block broken with the server (increasing break chance).")
                     .defaultValue(true)
                     .build()
             );

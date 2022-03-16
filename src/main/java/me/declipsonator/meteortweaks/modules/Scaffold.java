@@ -65,7 +65,7 @@ public class Scaffold extends Module {
 
     private final Setting<Boolean> autoSwitch = sgGeneral.add(new BoolSetting.Builder()
         .name("auto-switch")
-        .description("Automatically swaps to a block before placing.")
+        .description("Automatically swaps to MainMixin block before placing.")
         .defaultValue(true)
         .build()
     );
@@ -96,7 +96,7 @@ public class Scaffold extends Module {
 
     private final Setting<Boolean> onSurface = sgGeneral.add(new BoolSetting.Builder()
         .name("on-surface")
-        .description("Places horizontal and vertical blocks when already standing on a block.")
+        .description("Places horizontal and vertical blocks when already standing on MainMixin block.")
         .defaultValue(true)
         .build()
     );
@@ -371,7 +371,7 @@ public class Scaffold extends Module {
     }
 
     public static class RenderBlock {
-        public BlockPos.Mutable pos = new BlockPos.Mutable();
+        public final BlockPos.Mutable pos = new BlockPos.Mutable();
         public int ticks;
 
         public RenderBlock set(BlockPos blockPos) {

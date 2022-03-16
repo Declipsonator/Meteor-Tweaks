@@ -1,6 +1,7 @@
 package me.declipsonator.meteortweaks.utils;
 
 import meteordevelopment.meteorclient.settings.Setting;
+import meteordevelopment.meteorclient.settings.SettingGroup;
 
 public class MixinReferences {
     // For ElytraFlyMixin/ElytraFlightModeMixin
@@ -27,6 +28,17 @@ public class MixinReferences {
 
     // For Crafting Recipe Book Stuff
     public static boolean clicked = false;
+
+    // For NotifierMixin
+    public static SettingGroup sgJoinLeave;
+    public static Setting<Boolean> joinLeaveMessages;
+    public static Setting<joinLeave> joinOrLeave;
+    public static Setting<Boolean> friendsJoinLeave;
+    public enum joinLeave {
+        Join,
+        Leave,
+        Both
+    }
 
 
 }

@@ -1,6 +1,5 @@
 package me.declipsonator.meteortweaks.mixins.tweaks;
 
-import me.declipsonator.meteortweaks.MeteorTweaks;
 import me.declipsonator.meteortweaks.modules.Confetti;
 import meteordevelopment.meteorclient.systems.modules.Modules;
 import net.minecraft.client.particle.EmitterParticle;
@@ -8,7 +7,6 @@ import net.minecraft.client.particle.NoRenderParticle;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.Entity;
 import net.minecraft.particle.ParticleEffect;
-import net.minecraft.particle.ParticleTypes;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -38,6 +36,7 @@ public class EmitterParticleMixin extends NoRenderParticle {
     @Inject(method = "tick", at = @At("HEAD"), cancellable = true)
     public void theTick(CallbackInfo ci) {
         Confetti confetti = Modules.get().get(Confetti.class);
+        if(confetti == null) return;
         if(confetti.isActive() && this.parameters.getType() == ParticleTypes.TOTEM_OF_UNDYING) {
             for (int i = 0; i < confetti.amountOfParticles.get() * 16; ++i) {
                 double d = this.random.nextFloat() * 2.0F - 1.0F;

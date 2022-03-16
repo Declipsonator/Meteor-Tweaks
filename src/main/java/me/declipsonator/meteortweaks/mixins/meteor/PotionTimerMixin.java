@@ -1,6 +1,5 @@
 package me.declipsonator.meteortweaks.mixins.meteor;
 
-import me.declipsonator.meteortweaks.MeteorTweaks;
 import me.declipsonator.meteortweaks.utils.MixinReferences;
 import meteordevelopment.meteorclient.settings.EnumSetting;
 import meteordevelopment.meteorclient.settings.Setting;
@@ -27,7 +26,7 @@ public class PotionTimerMixin extends HudElement {
 
     private final Setting<MixinReferences.whiteBlackNoRacismBecauseImBetterThanYou> whiteBlackNoRacismBecauseImBetterThanYouSetting = sgGeneral.add(new EnumSetting.Builder<MixinReferences.whiteBlackNoRacismBecauseImBetterThanYou>()
             .name("whitelist-blacklist")
-            .description("Whether or not to use a whitelist or a blacklist.")
+            .description("Whether or not to use MainMixin whitelist or MainMixin blacklist.")
             .defaultValue(MixinReferences.whiteBlackNoRacismBecauseImBetterThanYou.Blacklist)
             .build()
     );
