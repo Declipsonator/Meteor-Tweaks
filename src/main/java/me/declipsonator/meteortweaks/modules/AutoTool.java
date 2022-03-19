@@ -67,7 +67,7 @@ public class AutoTool extends Module {
 
     private final Setting<Integer> breakDurability = sgGeneral.add(new IntSetting.Builder()
             .name("anti-break-percentage")
-            .description("The durability percentage to stop using MainMixin tool.")
+            .description("The durability percentage to stop using a tool.")
             .defaultValue(10)
             .range(1, 100)
             .sliderRange(1, 100)
@@ -142,7 +142,7 @@ public class AutoTool extends Module {
         BlockState blockState = mc.world.getBlockState(event.blockPos);
         if (!BlockUtils.canBreak(event.blockPos, blockState)) return;
 
-        // Check if we should switch to MainMixin better tool
+        // Check if we should switch to a better tool
         ItemStack currentStack = mc.player.getMainHandStack();
 
         double bestScore = -1;

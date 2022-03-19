@@ -26,7 +26,7 @@ public class PotionTimerMixin extends HudElement {
 
     private final Setting<MixinReferences.whiteBlackNoRacismBecauseImBetterThanYou> whiteBlackNoRacismBecauseImBetterThanYouSetting = sgGeneral.add(new EnumSetting.Builder<MixinReferences.whiteBlackNoRacismBecauseImBetterThanYou>()
             .name("whitelist-blacklist")
-            .description("Whether or not to use MainMixin whitelist or MainMixin blacklist.")
+            .description("Whether or not to use a whitelist or a blacklist.")
             .defaultValue(MixinReferences.whiteBlackNoRacismBecauseImBetterThanYou.Blacklist)
             .build()
     );

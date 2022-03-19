@@ -13,7 +13,7 @@ import static com.mojang.brigadier.Command.SINGLE_SUCCESS;
 
 public class ReloadBlocks extends Command {
     public ReloadBlocks() {
-        super("reload-blocks", "Removes ghost blocks in MainMixin range around the player.", "remove-ghosts");
+        super("reload-blocks", "Removes ghost blocks in a range around the player.", "remove-ghosts");
     }
 
     @Override
