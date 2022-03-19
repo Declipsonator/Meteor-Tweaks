@@ -44,7 +44,7 @@ public class BlockPosArgumentType implements ArgumentType<String> {
         }
     }
 
-    public String parse(StringReader stringReader) throws CommandSyntaxException {
+    public String parse(StringReader stringReader) {
         return stringReader.getRead();
     }
 

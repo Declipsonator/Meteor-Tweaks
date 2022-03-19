@@ -12,7 +12,7 @@ public class ClientPacketListenerMixin {
     @ModifyArg(method = "onEntityStatus", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/particle/ParticleManager;addEmitter(Lnet/minecraft/entity/Entity;Lnet/minecraft/particle/ParticleEffect;I)V"), index = 2)
     private int modifyTheArg(int maxAge) {
         Confetti confetti = Modules.get().get(Confetti.class);
-        if(!confetti.isActive()) return maxAge;
+        if(confetti == null || !confetti.isActive()) return maxAge;
         return  Modules.get().get(Confetti.class).timeLasting.get();
     }
 }

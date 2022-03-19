@@ -24,8 +24,5 @@ public class TweaksUtil {
         return new Gson().fromJson(accountString, Account.class);
     }
 
-    public static void copyBufferedImage(BufferedImage image) {
-
-    }
 }
 

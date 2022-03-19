@@ -371,7 +371,7 @@ public class Scaffold extends Module {
     }
 
     public static class RenderBlock {
-        public BlockPos.Mutable pos = new BlockPos.Mutable();
+        public final BlockPos.Mutable pos = new BlockPos.Mutable();
         public int ticks;
 
         public RenderBlock set(BlockPos blockPos) {

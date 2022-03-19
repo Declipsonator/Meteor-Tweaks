@@ -27,8 +27,8 @@ import java.util.Objects;
 
 
 public class RideStats extends Module {
-    SettingGroup sgGeneral = settings.getDefaultGroup();
-    SettingGroup sgEntities = settings.createGroup("Entities");
+    final SettingGroup sgGeneral = settings.getDefaultGroup();
+    final SettingGroup sgEntities = settings.createGroup("Entities");
 
     private final Setting<Boolean> horse = sgEntities.add(new BoolSetting.Builder()
             .name("horses")

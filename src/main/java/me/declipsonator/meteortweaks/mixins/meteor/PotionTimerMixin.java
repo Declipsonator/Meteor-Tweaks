@@ -1,6 +1,5 @@
 package me.declipsonator.meteortweaks.mixins.meteor;
 
-import me.declipsonator.meteortweaks.MeteorTweaks;
 import me.declipsonator.meteortweaks.utils.MixinReferences;
 import meteordevelopment.meteorclient.settings.EnumSetting;
 import meteordevelopment.meteorclient.settings.Setting;
