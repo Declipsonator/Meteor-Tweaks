@@ -42,6 +42,7 @@ public class MeteorTweaks extends MeteorAddon {
 		Modules.get().add(new DeathExplore());
 		Modules.get().add(new EntitySpeed());
 		Modules.get().add(new MultiTask());
+		Modules.get().add(new GameTweaks());
 		Modules.get().add(new Confetti());
 
 		// Commands
