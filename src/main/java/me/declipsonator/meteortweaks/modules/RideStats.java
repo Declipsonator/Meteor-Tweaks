@@ -1,7 +1,7 @@
 /*
-    A lot of this module is pretty much directly from the Nametags module
-    I'm not very good with rendering and might rewrite it entirely from my code in the future
-    And ofc big thanks to meteor (https://github.com/meteordevelopment/meteor-client)
+ *  This file is part of the Meteor Tweaks distribution (https://github.com/Declipsonator/Meteor-Tweaks/).
+ *  Copyright (c) 2022 Meteor Tweaks.
+ *  Licensed Under the GNU Lesser General Public License v3.0
  */
 
 package me.declipsonator.meteortweaks.modules;

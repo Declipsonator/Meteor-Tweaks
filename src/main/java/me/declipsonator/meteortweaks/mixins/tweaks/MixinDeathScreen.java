@@ -1,6 +1,9 @@
+/*
+ *  This file is part of the Meteor Tweaks distribution (https://github.com/Declipsonator/Meteor-Tweaks/).
+ *  Copyright (c) 2022 Meteor Tweaks.
+ *  Licensed Under the GNU Lesser General Public License v3.0
+ */
 
-
-/* Decompiler 3ms, total 61ms, lines 27 */
 package me.declipsonator.meteortweaks.mixins.tweaks;
 
 import me.declipsonator.meteortweaks.modules.GameTweaks;
