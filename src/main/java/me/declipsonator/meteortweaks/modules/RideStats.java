@@ -37,6 +37,13 @@ public class RideStats extends Module {
             .build()
     );
 
+    private final Setting<Boolean> skellyHorse = sgEntities.add(new BoolSetting.Builder()
+            .name("skeleton-horses")
+            .description("Display stats above skeleton horses.")
+            .defaultValue(true)
+            .build()
+    );
+
     private final Setting<Boolean> donkey = sgEntities.add(new BoolSetting.Builder()
             .name("donkeys")
             .description("Display stats above donkeys.")
@@ -138,12 +145,12 @@ public class RideStats extends Module {
     private void onRender2D(Render2DEvent event) {
         for(Entity entity: Objects.requireNonNull(mc.world).getEntities()) {
 
-            //idk why I did this, just looks better ig
             boolean horse = entity.getType() == EntityType.HORSE && this.horse.get();
             boolean mule = entity.getType() == EntityType.MULE && this.mule.get();
             boolean donkey = entity.getType() == EntityType.DONKEY && this.donkey.get();
             boolean llama = entity.getType() == EntityType.LLAMA && this.llama.get();
-            if (horse || mule || donkey || llama) {
+            boolean skellyHorse = entity.getType() == EntityType.SKELETON_HORSE && this.skellyHorse.get();
+            if (horse || mule || donkey || llama || skellyHorse) {
                 pos.set(entity, event.tickDelta);
                 pos.add(0, entity.getEyeHeight(entity.getPose()) + 0.75, 0);
                 pos.add(0, -1 + height.get(), 0);
