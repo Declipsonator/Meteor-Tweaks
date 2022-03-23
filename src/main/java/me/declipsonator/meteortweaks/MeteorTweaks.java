@@ -10,7 +10,9 @@ import me.declipsonator.meteortweaks.commands.ReloadBlocks;
 import me.declipsonator.meteortweaks.commands.SoftLeave;
 import me.declipsonator.meteortweaks.hud.ItemCountHud;
 import me.declipsonator.meteortweaks.modules.*;
+import me.declipsonator.meteortweaks.utils.GithubUtils;
 import meteordevelopment.meteorclient.MeteorClient;
+import meteordevelopment.meteorclient.addons.GithubRepo;
 import meteordevelopment.meteorclient.addons.MeteorAddon;
 import meteordevelopment.meteorclient.systems.Systems;
 import meteordevelopment.meteorclient.systems.commands.Commands;
@@ -27,7 +29,7 @@ import org.apache.logging.log4j.Logger;
 import java.lang.invoke.MethodHandles;
 
 public class MeteorTweaks extends MeteorAddon {
-	public static final Logger LOG = LogManager.getLogger();
+	public static final Logger LOG = LogManager.getLogger("Meteor Tweaks");
 
 	@Override
 	public void onInitialize() {
@@ -64,6 +66,22 @@ public class MeteorTweaks extends MeteorAddon {
 		Modules.get().get(SpeedMine.class).getInfoString();
 		Modules.get().get(NoRender.class).getInfoString();
 	}
+
+	@Override
+	public String getWebsite() {
+		return "https://github.com/Declipsonator/Meteor-Tweaks/";
+	}
+
+	@Override
+	public GithubRepo getRepo() {
+		return new GithubRepo("Declipsonator", "Meteor-Tweaks", "main");
+	}
+
+	@Override
+	public String getCommit() {
+		return GithubUtils.isOutdated() ? GithubUtils.getUpdateCommit() : GithubUtils.getLastCommit();
+	}
+
 
 
 

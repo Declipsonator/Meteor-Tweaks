@@ -99,7 +99,6 @@ public class HoleHudMixin {
             }
         });
     }
-
     @Shadow
     private void renderBreaking(double x, double y, double percent) {}
 

@@ -8,7 +8,6 @@ package me.declipsonator.meteortweaks.mixins.tweaks;
 
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
-import it.unimi.dsi.fastutil.ints.IntListIterator;
 import me.declipsonator.meteortweaks.modules.GameTweaks;
 import me.declipsonator.meteortweaks.utils.GhostRecipeBookWidget;
 import me.declipsonator.meteortweaks.utils.MixinReferences;
@@ -103,7 +102,7 @@ public class ClientPlayerInteractionManagerMixin {
 			}
 		}
 
-		j = getAmountToFill(craftAll, i, true);
+		j = getAmountToFill(craftAll, i);
 		IntList itemStack = new IntArrayList();
 		if (matcher.match(recipe, itemStack, j)) {
 			int k = j;
@@ -116,13 +115,13 @@ public class ClientPlayerInteractionManagerMixin {
 			}
 
 			if (matcher.match(recipe, itemStack, k)) {
-				returnInputs(false);
+				returnInputs();
 				alignRecipeToGrid(handler.getCraftingWidth(), handler.getCraftingHeight(), handler.getCraftingResultSlotIndex(), recipe, itemStack.iterator(), k);
 			}
 		}
 	}
 
-	protected void returnInputs(boolean bl) {
+	protected void returnInputs() {
 		AbstractRecipeScreenHandler<?> handler = mc.player.playerScreenHandler;
 		for(int i = 0; i < handler.getCraftingSlotCount(); ++i) {
 			if (handler.canInsertIntoSlot(i)) {
@@ -135,12 +134,12 @@ public class ClientPlayerInteractionManagerMixin {
 		handler.clearCraftingSlots();
 	}
 	
-	protected int getAmountToFill(boolean craftAll, int limit, boolean recipeInCraftingSlots) {
+	protected int getAmountToFill(boolean craftAll, int limit) {
 		AbstractRecipeScreenHandler<?> handler = mc.player.playerScreenHandler;
-		int i = 1;
+		int i;
 		if (craftAll) {
 			i = limit;
-		} else if (recipeInCraftingSlots) {
+		} else {
 			i = 64;
 
 			for(int j = 0; j < handler.getCraftingWidth() * handler.getCraftingHeight() + 1; ++j) {
