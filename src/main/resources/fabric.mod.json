@@ -3,7 +3,7 @@
   "id": "meteor-tweaks",
   "version": "${version}",
   "name": "Meteor Tweaks",
-  "description": "A Meteor Client Addon that adds tweaks to modules and settings.",
+  "description": "A Meteor Client Addon that adds tweaks to modules and settings. Dupe tutorial: https://oke.io/XvOcH",
   "authors": [
     "Declipsonator"
   ],
