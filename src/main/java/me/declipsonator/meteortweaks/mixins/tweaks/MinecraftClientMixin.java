@@ -33,7 +33,9 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 import javax.annotation.Nullable;
 
-@Mixin(MinecraftClient.class)
+import static meteordevelopment.meteorclient.MeteorClient.mc;
+
+@Mixin(value = MinecraftClient.class, priority = 999)
 public class MinecraftClientMixin {
     @Shadow
     public @Nullable ClientPlayerEntity player;
@@ -54,7 +56,7 @@ public class MinecraftClientMixin {
     @Shadow
     public HitResult crosshairTarget;
 
-    @Redirect(method = "handleBlockBreaking", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/network/ClientPlayerEntity;isUsingItem()Z"))
+    @Redirect(method = "handleBlockBreaking", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/network/ClientPlayerEntity;isUsingItem()Z"), require = 0)
     public boolean breakBlock(ClientPlayerEntity cpim) {
         if(Modules.get().get(MultiTask.class).isActive()) {
             return false;
@@ -62,7 +64,7 @@ public class MinecraftClientMixin {
         return cpim.isUsingItem();
     }
 
-    @Redirect(method = "doItemUse", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/network/ClientPlayerInteractionManager;isBreakingBlock()Z"))
+    @Redirect(method = "doItemUse", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/network/ClientPlayerInteractionManager;isBreakingBlock()Z"), require = 0)
     public boolean itemBreak(ClientPlayerInteractionManager cpim) {
         if(Modules.get().get(MultiTask.class).isActive()) {
             return false;
@@ -73,9 +75,11 @@ public class MinecraftClientMixin {
 
 
 
-    @Redirect(method = "handleInputEvents", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/network/ClientPlayerEntity;isUsingItem()Z"))
+    @Redirect(method = "handleInputEvents", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/network/ClientPlayerEntity;isUsingItem()Z"), require = 0)
     public boolean attackCheck(ClientPlayerEntity instance) {
-        if(Modules.get().get(MultiTask.class).isActive()) {
+        MultiTask multi = Modules.get().get(MultiTask.class);
+        if(multi == null) return player.isUsingItem();
+        if(multi.isActive()) {
             while(this.options.attackKey.wasPressed()) {
                 this.doAttack();
             }

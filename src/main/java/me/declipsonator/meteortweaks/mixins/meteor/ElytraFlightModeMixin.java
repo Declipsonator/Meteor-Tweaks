@@ -33,7 +33,7 @@ public class ElytraFlightModeMixin {
 
     private double gradualUp = 0;
     private double gradualDown = 0;
-    private double gradualFoward = 0;
+    private double gradualForward = 0;
     private double gradualBack = 0;
     private double gradualRight = 0;
     private double gradualLeft = 0;
@@ -52,7 +52,7 @@ public class ElytraFlightModeMixin {
         }
         if(!mc.options.sneakKey.isPressed()) {
             notPressed++;
-            gradualFoward = 0;
+            gradualForward = 0;
         }
         if(!mc.options.backKey.isPressed()) {
             notPressed++;
@@ -80,14 +80,14 @@ public class ElytraFlightModeMixin {
             gradualTogether += elytraFly.horizontalSpeed.get() / MixinReferences.gradualAccelerationTime.get();
 
             if (mc.options.forwardKey.isPressed()) {
-                gradualFoward += elytraFly.horizontalSpeed.get() / MixinReferences.gradualAccelerationTime.get();
+                gradualForward += elytraFly.horizontalSpeed.get() / MixinReferences.gradualAccelerationTime.get();
 
                 if (gradualTogether < elytraFly.horizontalSpeed.get() && !MixinReferences.whenChangingDirections.get()) {
                     velX += forward.x * gradualTogether * 10;
                     velZ += forward.z * gradualTogether * 10;
-                } else if (gradualFoward < elytraFly.horizontalSpeed.get()) {
-                    velX += forward.x * gradualFoward * 10;
-                    velZ += forward.z * gradualFoward * 10;
+                } else if (gradualForward < elytraFly.horizontalSpeed.get()) {
+                    velX += forward.x * gradualForward * 10;
+                    velZ += forward.z * gradualForward * 10;
                 } else {
                     velX += forward.x * elytraFly.horizontalSpeed.get() * 10;
                     velZ += forward.z * elytraFly.horizontalSpeed.get() * 10;
